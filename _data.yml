@@ -1,0 +1,14 @@
+lang: en
+home:
+  welcome: WE ARE VORTEX
+menu_links: []
+metas:
+  site: TED Vortex
+  description: >-
+    AI psychologist by day, samurai tooling in general by night. I'm just here
+    to make sure your machines don't develop a personality disorder.
+  title: =title
+  image: =image
+  twitter: '@0_vortex'
+  lang: en
+  generator: false
