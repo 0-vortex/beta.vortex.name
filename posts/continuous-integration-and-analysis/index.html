@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous integration and analysis tools for open source nodeJS development - TED Vortex</title>
+
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="hsl(220, 20%, 100%)" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="hsl(220, 20%, 10%)" media="(prefers-color-scheme: dark)">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="TED Vortex">
+    <link rel="alternate" href="/feed.json" type="application/json" title="TED Vortex">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="canonical" href="http://localhost/posts/continuous-integration-and-analysis/">
+    <script src="/js/main.js" type="module"></script>
+    
+  <link rel="icon" sizes="48x48" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TED Vortex">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Continuous integration and analysis tools for open source nodeJS…">
+<meta property="og:description" content="AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.">
+<meta property="og:url" content="http://localhost/posts/continuous-integration-and-analysis/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@0_vortex">
+<meta name="description" content="AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.">
+</head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-home">
+          <strong>TED Vortex</strong>
+      </a>
+
+      <ul class="navbar-links">        <li>
+          <a href="/pages/about/">
+            About me
+          </a>
+        </li>
+        <li>
+          <a href="/archive/">
+            Archive
+          </a>
+        </li>
+      <li>
+        <script>
+          let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+          document.documentElement.dataset.theme = theme;
+          function changeTheme() {
+            theme = theme === "dark" ? "light" : "dark";
+            localStorage.setItem("theme", theme);
+            document.documentElement.dataset.theme = theme;
+          }
+        </script>
+        <button class="button" onclick="changeTheme()">
+          <span class="icon">◐</span>
+        </button>
+      </li>
+      </ul>
+    </nav>
+
+    <main class="body-post">
+      <article class="post" data-pagefind-body="" data-title="Continuous integration and analysis tools for open source nodeJS development" data-pagefind-index-attrs="data-title">
+  <header class="post-header">
+    <h1 class="post-title">Continuous integration and analysis tools for open source nodeJS development</h1>
+
+    <div class="post-details">
+      <p>by TED Vortex</p>
+
+  <p>
+    <time datetime="2016-06-22 00:00:00">
+      June 22nd, 2016
+    </time>
+  </p>
+
+  <p>3 min read</p>
+
+  <div class="post-tags">
+
+        <a data-pagefind-filter="filter" class="badge" href="/archive/open-source/">open source</a>
+
+        <a data-pagefind-filter="filter" class="badge" href="/archive/engineering/">engineering</a>
+
+        <a data-pagefind-filter="filter" class="badge" href="/archive/cloud/">cloud</a>
+  </div>
+</div>
+
+  </header>
+
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li>
+        <a href="#the-list-covers-services-that-can-be-broken-down-into-%22type%22-categories%3A">The list covers services that can be broken down into "type" categories:</a>
+
+      </li>
+      <li>
+        <a href="#continuous-integration%3A">Continuous Integration:</a>
+
+        <ul>
+          <li>
+            <a href="#travis-ci">Travis CI</a>
+          </li>
+          <li>
+            <a href="#snap-ci">Snap CI</a>
+          </li>
+          <li>
+            <a href="#buildkite">Buildkite</a>
+          </li>
+          <li>
+            <a href="#semaphore-ci">Semaphore CI</a>
+          </li>
+          <li>
+            <a href="#magnum-ci">Magnum CI</a>
+          </li>
+          <li>
+            <a href="#drone">Drone</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#continuous-delivery">Continuous Delivery</a>
+
+        <ul>
+          <li>
+            <a href="#wercker">Wercker</a>
+          </li>
+          <li>
+            <a href="#codeship">Codeship</a>
+          </li>
+          <li>
+            <a href="#shippable">Shippable</a>
+          </li>
+          <li>
+            <a href="#factor">Factor</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#continuous-analysis">Continuous Analysis</a>
+
+        <ul>
+          <li>
+            <a href="#bithound">Bithound</a>
+          </li>
+          <li>
+            <a href="#snyk">Snyk</a>
+          </li>
+          <li>
+            <a href="#dependency-ci">Dependency CI</a>
+          </li>
+          <li>
+            <a href="#coveralls-cc">Coveralls CC</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </nav>
+
+  <div class="post-body body">
+    <p>Initial idea is based on the list available at https://github.com/ligurio/Continuous-Integration-services/blob/master/continuous-integration-services-list.md.</p>
+<p>It contains only services that provide a sensible amount of features for open source projects or non-profit organisations. I've also added several tools I used or tested with a minimal up and running configuration.</p>
+<p>To summarise the review factors for this document:</p>
+<ul>
+<li>open source tools</li>
+<li>suitable for nodeJS application development</li>
+<li>minimal developer downtime and configuration setback</li>
+<li>fast build times (RAD)</li>
+</ul>
+<h2 id="the-list-covers-services-that-can-be-broken-down-into-%22type%22-categories%3A" tabindex="-1"><a href="#the-list-covers-services-that-can-be-broken-down-into-%22type%22-categories%3A" class="header-anchor">The list covers services that can be broken down into "type" categories:</a></h2>
+<ol>
+<li><strong><a href="#continuous-integration">Continuous Integration</a></strong></li>
+<li><strong><a href="#continuous-delivery">Continuous Delivery</a></strong></li>
+<li><strong><a href="#continuous-analysis">Continuous Analysis</a></strong></li>
+</ol>
+<p>The list of services can be narrowed down based on main programming language target audience (opinionated):</p>
+<p><strong>NodeJS:</strong></p>
+<ol>
+<li><a href="#travis-ci">Travis</a></li>
+<li><a href="#snap-ci">Snap</a></li>
+<li><a href="#bithound">Bithound</a></li>
+<li><a href="#snyk">Snyk</a></li>
+<li><a href="#dependency-ci">Dependency CI</a></li>
+<li><a href="#coveralls">Coveralls</a></li>
+</ol>
+<p><strong>Docker:</strong></p>
+<ol>
+<li><a href="#wercker">Wercker</a></li>
+<li><a href="#codeship">Codeship</a></li>
+<li><a href="#buildkite">Buildkite</a></li>
+<li><a href="#coveralls">Coveralls</a></li>
+</ol>
+<p><strong>Ruby:</strong></p>
+<ol>
+<li><a href="#codeship">Codeship</a></li>
+<li><a href="#coveralls">Coveralls</a></li>
+</ol>
+<h2 id="continuous-integration%3A" tabindex="-1"><a href="#continuous-integration%3A" class="header-anchor">Continuous Integration:</a></h2>
+<h3 id="travis-ci" tabindex="-1"><a href="#travis-ci" class="header-anchor"></a><a href="https://travis-ci.org">Travis CI</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>integrated with virtually every 3rd party</li>
+<li>fast (for ubuntu machines)</li>
+<li>free build matrix</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>local testing version is not free</li>
+<li>missing red hat based distros</li>
+</ul>
+<p><strong>Verdict</strong>: <em><strong>current preferred solution overall.</strong></em></p>
+<h3 id="snap-ci" tabindex="-1"><a href="#snap-ci" class="header-anchor"></a><a href="https://snap-ci.com">Snap CI</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>support for database adaptors</li>
+<li>support for pipes</li>
+<li>support for stages</li>
+<li>bamboo like usage</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>full integration takes some configuration downtime</li>
+</ul>
+<p><strong>Verdict</strong>: This is the current preferred solution for enterprise level applications.</p>
+<h3 id="buildkite" tabindex="-1"><a href="#buildkite" class="header-anchor"></a><a href="https://buildkite.com">Buildkite</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github support</li>
+<li>docker support</li>
+<li>supports multiple db engines</li>
+<li>pipes</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>manual configuration on everything</li>
+</ul>
+<p><strong>Verdict</strong>: Looks like the best overall solution for docker applications but the limitations and level of configuration required makes this service difficult to use for nodeJS applications. When considering microservices and multiple backend technologies this tool shines.</p>
+<h3 id="semaphore-ci" tabindex="-1"><a href="#semaphore-ci" class="header-anchor"></a><a href="https://semaphoreci.com">Semaphore CI</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>latest node development not supported</li>
+<li>no build matrix</li>
+<li>poor integration with other services</li>
+</ul>
+<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
+<h3 id="magnum-ci" tabindex="-1"><a href="#magnum-ci" class="header-anchor"></a><a href="https://magnum-ci.com">Magnum CI</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket/hosted</li>
+<li>developer flow</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>node 0.10 is highest version</li>
+<li>deployed technologies make the service unmaintainable</li>
+</ul>
+<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
+<h3 id="drone" tabindex="-1"><a href="#drone" class="header-anchor"></a><a href="https://drone.io">Drone</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket/google code</li>
+<li>support for all web languages</li>
+<li>support for database adaptors</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>node 0.10 is highest version</li>
+<li>deployed technologies make the service unmaintainable</li>
+</ul>
+<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
+<h2 id="continuous-delivery" tabindex="-1"><a href="#continuous-delivery" class="header-anchor">Continuous Delivery</a></h2>
+<h3 id="wercker" tabindex="-1"><a href="#wercker" class="header-anchor"></a><a href="http://wercker.com">Wercker</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>docker support</li>
+<li>kubernetes support</li>
+<li>pipes</li>
+<li>local testing</li>
+<li>awesome developer flow</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>not very useful for simple NPM packages</li>
+</ul>
+<p><strong>Verdict</strong>: Looks like the most solid continuous integration solution out there. Will test this in production with a react application.</p>
+<h3 id="codeship" tabindex="-1"><a href="#codeship" class="header-anchor"></a><a href="https://codeship.com">Codeship</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>docker native</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>ruby targeted audience</li>
+<li>OSS features limited vastly</li>
+</ul>
+<p><strong>Verdict</strong>: Looks like a solid choice for ruby/docker inspired projects. Performance seems good for small projects. With competitive technologies I would prefer this service for ruby development and asset revision.</p>
+<h3 id="shippable" tabindex="-1"><a href="#shippable" class="header-anchor"></a><a href="https://app.shippable.com">Shippable</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>docker support</li>
+<li>pipes</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>major user experience issues</li>
+<li>unable to select free license</li>
+</ul>
+<p><strong>Verdict</strong>: I would like to use this service ...</p>
+<h3 id="factor" tabindex="-1"><a href="#factor" class="header-anchor"></a><a href="https://factor.io">Factor</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github support</li>
+<li>custom workflow generator</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>ruby based</li>
+<li>lacks open source integrations</li>
+</ul>
+<p><strong>Verdict</strong>: It's only useful in the ruby ecosystem with complex workflows. Most of the features this service offers are provided by several packages and standards via NPM.</p>
+<h2 id="continuous-analysis" tabindex="-1"><a href="#continuous-analysis" class="header-anchor">Continuous Analysis</a></h2>
+<h3 id="bithound" tabindex="-1"><a href="#bithound" class="header-anchor"></a><a href="https://www.bithound.io">Bithound</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>local version</li>
+<li>code quality</li>
+<li>dependency security advisory</li>
+<li>builds on top of NSP</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>eslint highest supported version is 2.0</li>
+</ul>
+<p><strong>Verdict</strong>: So far very good and fast tool with extremely fast customer support.</p>
+<h3 id="snyk" tabindex="-1"><a href="#snyk" class="header-anchor"></a><a href="https://snyk.io">Snyk</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>github/bitbucket</li>
+<li>local check</li>
+<li>builds on top of nsp</li>
+<li>builds on top of src:clr security advisory</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>monitor command can fail (local backfall)</li>
+</ul>
+<p><strong>Verdict</strong>: Using this tool on top of</p>
+<h3 id="dependency-ci" tabindex="-1"><a href="#dependency-ci" class="header-anchor"></a><a href="https://dependencyci.com">Dependency CI</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>lightning fast setup due to lack of features</li>
+<li>vast number of programming languages supported</li>
+<li>go/julia/swift wow</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>not configurable</li>
+<li>nodeJS purpose is completely superseded by other tools already open source</li>
+</ul>
+<p><strong>Verdict</strong>: This tool is useful for projects that don't have a complete generic stack, for example a plugin theme pushed to NPM might not need complex integrations and this tools would serve well to notify in the rare cases of lost/forgotten packages.</p>
+<h3 id="coveralls-cc" tabindex="-1"><a href="#coveralls-cc" class="header-anchor"></a><a href="https://coveralls.io">Coveralls CC</a></h3>
+<p><strong>Pro</strong>:</p>
+<ul>
+<li>support for multiple programming languages</li>
+<li>support for multiple CIs</li>
+</ul>
+<p><strong>Con</strong>:</p>
+<ul>
+<li>local tests are cumbersome</li>
+</ul>
+<p><strong>Verdict</strong>: Using this as part of the LCOV data upload gulp task in parallel with bithound.</p>
+
+  </div>
+
+
+</article>
+
+<nav class="page-pagination pagination">
+  <ul>    <li class="pagination-next">
+      <a href="/posts/pine-healthcare-whitepaper/" rel="next">
+        <span>Newer post →</span>
+        <strong>Pine Healthcare Whitepaper Draft</strong>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+    </main>
+
+    <!-- Current page: /posts/continuous-integration-and-analysis/ -->
+  
+
+</body></html>

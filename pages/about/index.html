@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me - TED Vortex</title>
+
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="hsl(220, 20%, 100%)" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="hsl(220, 20%, 10%)" media="(prefers-color-scheme: dark)">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="TED Vortex">
+    <link rel="alternate" href="/feed.json" type="application/json" title="TED Vortex">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="canonical" href="http://localhost/pages/about/">
+    <script src="/js/main.js" type="module"></script>
+    
+  <link rel="icon" sizes="48x48" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TED Vortex">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="About me">
+<meta property="og:description" content="AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.">
+<meta property="og:url" content="http://localhost/pages/about/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@0_vortex">
+<meta name="description" content="AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.">
+</head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-home">
+          <strong>TED Vortex</strong>
+      </a>
+
+      <ul class="navbar-links">        <li>
+          <a href="/pages/about/" aria-current="page">
+            About me
+          </a>
+        </li>
+        <li>
+          <a href="/archive/">
+            Archive
+          </a>
+        </li>
+      <li>
+        <script>
+          let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+          document.documentElement.dataset.theme = theme;
+          function changeTheme() {
+            theme = theme === "dark" ? "light" : "dark";
+            localStorage.setItem("theme", theme);
+            document.documentElement.dataset.theme = theme;
+          }
+        </script>
+        <button class="button" onclick="changeTheme()">
+          <span class="icon">◐</span>
+        </button>
+      </li>
+      </ul>
+    </nav>
+
+    <main class="body-tag">
+      <article class="post" data-pagefind-body="">
+  <header class="post-header">
+    <h1 class="post-title">About me</h1>
+
+    
+  </header>
+
+  <div class="post-body">
+    <p>Hello! 👋</p>
+<p>My name is TED Vortex, welcome to my secret hideout. 🚀</p>
+<p>I am multi-faceted software engineer with over a decade experience building business critical applications and services and part time open source enthusiast.</p>
+<p>Proficient in GitHub Actions, CloudFlare Workers, TypeScript, and React. Skilled with De/Node, Docker, and PostGres. I prioritize efficiency and practicality in my work. No fluff, just results.</p>
+<p>In my day to day activities I employ various philosophical concepts, some of my favourite and most useful being: DRY, KISS, Occam's Razor and Zeno's paradoxes.</p>
+<p>Currently learning LLMs and Decentralized Scaling. 🚧</p>
+
+  </div>
+</article>
+    </main>
+
+    <!-- Current page: /pages/about/ -->
+  
+
+</body></html>
