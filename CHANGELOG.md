@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.1](https://github.com/0-vortex/beta.vortex.name/compare/v1.0.0...v1.0.1) (2025-02-17)
+
+### 🐛 Bug Fixes
+
+* enable github pages permissions ([ea00fa1](https://github.com/0-vortex/beta.vortex.name/commit/ea00fa12c2ed661579aea82ab52c1a000d950bc5))
+
 ## 1.0.0 (2025-02-17)
 
 ### 🍕 Features
