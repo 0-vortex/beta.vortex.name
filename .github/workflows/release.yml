@@ -49,6 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
+    permissions: write-all
     name: Build and deploy GH Pages
     needs:
       - release
