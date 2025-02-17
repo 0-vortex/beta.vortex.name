@@ -49,6 +49,9 @@ jobs:
 
   deploy:
     name: Build and deploy GH Pages
+    needs:
+      - release
+    runs-on: ubuntu-latest
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v4
