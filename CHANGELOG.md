@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.0.1...v1.1.0) (2025-02-21)
+
+### 🍕 Features
+
+* add 404 svg page ([364151c](https://github.com/0-vortex/beta.vortex.name/commit/364151c8fdeef31b4a6b41b23470bb2579b308e6))
+* add logo and some images ([6b18c0d](https://github.com/0-vortex/beta.vortex.name/commit/6b18c0d9b861434a796ef59c1d4895f7935fdd69))
+* downstream simple blog theme and start re-work ([7da934a](https://github.com/0-vortex/beta.vortex.name/commit/7da934aa4584d7f941cd2cec2223bd789b471a5f))
+
 ## [1.0.1](https://github.com/0-vortex/beta.vortex.name/compare/v1.0.0...v1.0.1) (2025-02-17)
 
 ### 🐛 Bug Fixes
