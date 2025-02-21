@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.1](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.0...v1.1.1) (2025-02-21)
+
+### 🐛 Bug Fixes
+
+* correct deno ci ([a1e7321](https://github.com/0-vortex/beta.vortex.name/commit/a1e73217556596d05c5d4568bbd123e4db22ee64))
+
 ## [1.1.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.0.1...v1.1.0) (2025-02-21)
 
 ### 🍕 Features
