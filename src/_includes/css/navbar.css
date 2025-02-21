@@ -1,4 +1,6 @@
 .navbar {
+  background-color: var(--color-background);
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   column-gap: 1rem;
@@ -30,6 +32,28 @@
   align-items: center;
 }
 
+.navbar-banner {
+  display: flex;
+  flex: 1 1 auto;
+}
+
 .navbar-home {
+  display: flex;
+  min-width: 150px;
+  border: 1px solid transparent;
+  background-color: transparent;
   text-decoration: none;
+  &:hover {
+    border-color: rgb(23, 23, 23, 0.1);
+    background-color: rgb(255, 255, 255, 0.1);
+  }
+  img {
+    max-height: 40px;
+    max-width: 100%;
+    margin-right: 0.5rem;
+  }
+  strong {
+    font: var(--font-ui-bold);
+    align-self: center;
+  }
 }

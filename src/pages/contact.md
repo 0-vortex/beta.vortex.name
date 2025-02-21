@@ -7,4 +7,4 @@ menu:
   order: 2
 ---
 
-Hola
+<img class="splash-portrait" src="/uploads/splash-alien-abduction.png" alt=""/>

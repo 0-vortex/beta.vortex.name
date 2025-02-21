@@ -18,3 +18,4 @@ In my day to day activities I employ various philosophical concepts, some of my 
 
 Currently learning LLMs and Decentralized Scaling. 🚧
 
+<img class="splash-screen max" src="/uploads/portrait-mecha-girl.webp" alt=""/>

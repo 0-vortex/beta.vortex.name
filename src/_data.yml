@@ -2,6 +2,8 @@ lang: en
 
 home:
   welcome: WE ARE VORTEX
+  
+logo: favicon.svg
 
 menu_links: []
 extra_head: []
