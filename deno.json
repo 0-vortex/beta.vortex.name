@@ -2,7 +2,7 @@
   "version": "1.1.0",
   "license": "MIT",
   "vendor": true,
-  "nodeModulesDir": "manual",
+  "nodeModulesDir": "auto",
   "lock": {
     "path": "./deno.lock",
     "frozen": true
