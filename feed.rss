@@ -3,11 +3,11 @@
   <channel>
     <title>TED Vortex</title>
     <link>http://localhost/</link>
-    <atom:link href="http://localhost/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://localhost/feed.rss" rel="self" type="application/rss+xml"/>
     <description>
       AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.
     </description>
-    <lastBuildDate>Fri, 21 Feb 2025 00:06:57 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2025 22:15:00 GMT</lastBuildDate>
     <language>en</language>
     <generator>Lume v2.5.2</generator>
     <item>
