@@ -68,6 +68,11 @@ bodyClass: body-post
   {{ /if }}
 </article>
 
+<div class="layout-meta">
+  <p>{{ readingInfo.words }} words</p>
+  <p>{{ readingInfo.minutes }} min read</p>
+</div>
+
 <nav class="page-pagination pagination">
   <ul>
     {{- set previousPost = search.previousPage(url, "type=post") }}

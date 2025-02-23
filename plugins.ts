@@ -19,6 +19,7 @@ import inline from "lume/plugins/inline.ts";
 import jsonLd from "lume/plugins/json_ld.ts";
 import favicon from "lume/plugins/favicon.ts";
 import sri from "lume/plugins/sri.ts";
+import sourceMaps from "lume/plugins/source_maps.ts";
 
 import "lume/types.ts";
 
@@ -31,8 +32,9 @@ export interface Options {
 
 export const defaults: Options = {
   feed: {
-    output: ["/feed.xml", "/feed.json"],
+    output: ["/feed.rss", "/feed.json"],
     query: "type=post",
+    sort: "date=desc",
     info: {
       title: "=metas.site",
       description: "=metas.description",
@@ -52,7 +54,7 @@ export default function (userOptions?: Options) {
       .use(basePath())
       .use(toc())
       .use(prism(options.prism))
-      .use(readingInfo())
+      .use(readingInfo({ wordsPerMinute: 183 }))
       .use(date(options.date))
       .use(metas())
       .use(image())
@@ -67,6 +69,7 @@ export default function (userOptions?: Options) {
       .use(jsonLd())
       .use(favicon())
       .use(sri())
+      .use(sourceMaps({ inline: false, sourceContent: false }))
       .copy("fonts")
       .copy("js")
       .copy("favicon.svg")

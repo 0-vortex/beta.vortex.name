@@ -52,7 +52,7 @@
     "format:watch": "deno task format -- --watch --no-clear-screen",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
-    "serve": "deno task lume -s",
+    "dev": "deno task lume -s",
     "cms": "deno task lume cms"
   }
 }

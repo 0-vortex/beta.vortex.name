@@ -1,4 +1,13 @@
 ---
+jsonLd:
+  "@type": WebSite
+  url: /about
+  headline: $ h1.headline
+  name: =header.title
+  description: =header.description
+  author:
+    "@type": Person
+    name: =header.title
 layout: layouts/page.vto
 title: About me
 menu:
