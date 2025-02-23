@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.2](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.1...v1.1.2) (2025-02-23)
+
+### 🔥 Performance Improvements
+
+* test maps and adjust minor plugins ([458c030](https://github.com/0-vortex/beta.vortex.name/commit/458c030d9f00cbb9cec82b872769e3e8f38c7c05))
+
 ## [1.1.1](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.0...v1.1.1) (2025-02-21)
 
 ### 🐛 Bug Fixes
