@@ -2,7 +2,7 @@ lang: en
 
 home:
   welcome: WE ARE VORTEX
-  
+
 logo: favicon.svg
 
 menu_links: []
@@ -14,8 +14,8 @@ metas:
   description: >-
     AI psychologist by day, samurai tooling in general by night. I'm just here
     to make sure your machines don't develop a personality disorder.
-  title: "=title"
-  image: "=image"
+  title: '=title'
+  image: '=image'
   twitter: '@0_vortex'
   lang: en
   generator: false

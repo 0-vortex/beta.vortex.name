@@ -30,6 +30,7 @@ You can read more on:
 In practice the complexity of the standard and existing health care real life demands and regulations produced a new market niche dedicated to interoperability and FHIR implementations on top of existing software management systems.
 
 While the highlighted products and companies are in no way affiliated to this paper, they represent various solutions to the interoperability layer **without** enabling the user to own any of his data and medical records:
+
 - [Gemms](https://gemmsone.com/index.php?option=com_content&view=article&id=807&Itemid=552)
 - [Oracle SOA](https://www.oracle.com/middleware/technologies/soasuite.html)
 - [CloverLeaf](https://www.infor.com/products/cloverleaf)
@@ -47,6 +48,7 @@ While the highlighted products and companies are in no way affiliated to this pa
 The solution described as Pine is motivated by the fact that open access to patient health records is difficult even when using the vast majority of existing solutions and in similar percentage, centralised.
 
 When technology is centralized, it typically means that it is controlled and run by a single company, government, or individual. Decentralized technology on the other hand, is run by a network of participants that no one actor can control or shut down. Here are some benefits of decentralization:
+
 1. **Users don’t have to put trust in a central authority.** We trust companies and governments with our information and money all the time, and it is completely ok to make these decisions on a case by case basis. But we see plenty of examples where this trust lets us down to varying degrees, ranging from the product that you trusted to backup all your photos getting shut down when the startup gets bought or goes out of business, to the social media company selling your data to advertisers who follow you around the internet. In a well designed decentralized network, you should be able to reduce or eliminate the trust that you’re required to put into third parties.
 1. **There is less likely to be a single point of failure.** We see single points of failure all the time in the form of outages of centralized web sites. Gmail goes down and productivity halts as you can’t get your email. Your bank’s web site shuts down for maintenance and you can’t do an online transfer to pay your bills. In decentralized networks, no one node going down can take down the entire network, so no matter how many users come and go, your applications should remain up and running.
 1. **There is less censorship.** It is becoming increasingly common that governments shut down their citizens’ access to social media, as they attempt to censor reports of what is going on internally. It is easy for them to shut down access to Twitter, as all they have to do is stop traffic going to Twitter’s central servers. But it is far more difficult for them to censor traffic on a peer to peer network, in which every single outbound packet being sent could be communicating with another peer on the decentralized network, who can then forward that message along.
@@ -63,6 +65,7 @@ Clinical trial management is another area where blockchains can be of use. For i
 In the context of periodontology, multiple actors can verify existing datasets anonymously as well as all the open source code and implementations and we can also apply multiple forms of assisted intelligence to the data sets. While iniatially we are deploying a bias detection and learning algorithm to focus on the researched levels, once the anonimity layer is audited we can apply reinforcement learning to multiple areas impacting user experience.
 
 Leveraging open access technologies, providers and standards we can give end users complete control over:
+
 - their data and identity
 - the way their medical records are used
 - which entities can access your information

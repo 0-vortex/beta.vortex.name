@@ -2,9 +2,9 @@
 layout: layouts/base.vto
 bodyClass: body-tag
 ---
-<header class="page-header">
+<header class="mb-8">
   <p><a href="/archive/">{{ i18n.nav.back }}</a></p>
-  <h1 class="page-title">{{ title }}</h1>
+  <h1 class="m-0 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ title }}</h1>
 </header>
 
 {{ include "templates/post-list.vto" { postslist: search.pages(search_query) } }}

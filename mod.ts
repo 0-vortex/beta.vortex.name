@@ -11,15 +11,8 @@ export default function (options: Partial<Options> = {}) {
 
     // Add remote files
     const files = [
-      "_includes/css/fonts.css",
       "_includes/css/navbar.css",
-      "_includes/css/page.css",
       "_includes/css/post-list.css",
-      "_includes/css/post.css",
-      "_includes/css/reset.css",
-      "_includes/css/badge.css",
-      "_includes/css/variables.css",
-      "_includes/css/search.css",
       "_includes/css/comments.css",
       "_includes/css/404.css",
       "_includes/layouts/archive_result.vto",

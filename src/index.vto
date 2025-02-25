@@ -4,10 +4,10 @@ bodyClass: body-home
 title: Home
 ---
 
-<header class="page-header">
+<header class="mb-8">
   <img class="splash-screen" src="/uploads/splash-ethereal-spaces.png" alt=""/>
 
-  <h1 class="page-title">{{ home.welcome }}</h1>
+  <h1 class="m-0 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ home.welcome }}</h1>
 
   <div class="search" id="search"></div>
 </header>
@@ -16,7 +16,7 @@ title: Home
   {{ for post of search.pages("type=post", "date=desc", 3) }}
   <article class="post">
     <header class="post-header">
-      <h2 class="post-title">
+      <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
         <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
           {{ post.title || post.url }}
         </a>
@@ -34,7 +34,7 @@ title: Home
       {{ post.excerpt |> md }}
     </div>
 
-    <a href="{{ post.url }}" class="post-link">
+    <a href="{{ post.url }}" class="inline-block">
       {{ i18n.nav.continue_reading }}
     </a>
   </article>

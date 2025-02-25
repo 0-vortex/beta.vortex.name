@@ -21,8 +21,7 @@ To summarise the review factors for this document:
 - minimal developer downtime and configuration setback
 - fast build times (RAD)
 
-The list covers services that can be broken down into "type" categories:
-----------------------------------------------------------------
+## The list covers services that can be broken down into "type" categories:
 
 1. **[Continuous Integration](#continuous-integration)**
 2. **[Continuous Delivery](#continuous-delivery)**
@@ -67,7 +66,7 @@ The list of services can be narrowed down based on main programming language tar
 - local testing version is not free
 - missing red hat based distros
 
-**Verdict**: ***current preferred solution overall.***
+**Verdict**: _**current preferred solution overall.**_
 
 ### [Snap CI](https://snap-ci.com)
 

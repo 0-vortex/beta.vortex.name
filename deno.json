@@ -36,6 +36,7 @@
     ]
   },
   "imports": {
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "@tmcb/conventional-commit": "npm:@tmcb/conventional-commit@^1.0.0",
     "lume/": "https://deno.land/x/lume@v2.5.2/",
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.9.2/"

@@ -1,4 +1,6 @@
 import date, { Options as DateOptions } from "lume/plugins/date.ts";
+import tailwindcss from "lume/plugins/tailwindcss.ts";
+import typography from "npm:@tailwindcss/typography"
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
 import prism, { Options as PrismOptions } from "lume/plugins/prism.ts";
@@ -50,7 +52,25 @@ export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
 
   return (site: Lume.Site) => {
-    site.use(postcss())
+    site
+      .use(tailwindcss({
+        options: {
+          plugins: [typography],
+          theme: {
+            extend: {
+              colors: {
+                primary: '#14181f',
+                secondary: '#023535',
+              },
+            },
+            fontFamily: {
+              sans: ["Graphik", "sans-serif"],
+              serif: ["Merriweather", "serif"],
+            },
+          },
+        },
+      }))
+      .use(postcss())
       .use(basePath())
       .use(toc())
       .use(prism(options.prism))

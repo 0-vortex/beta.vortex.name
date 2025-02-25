@@ -131,7 +131,7 @@
       display: none;
     }
     .ellipsis::after {
-      content: "…";
+      content: '…';
     }
     .mention {
       text-decoration: none;

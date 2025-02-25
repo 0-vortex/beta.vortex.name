@@ -15,7 +15,7 @@ menu:
   order: 0
 ---
 
-Hello! 👋 
+Hello! 👋
 
 My name is TED Vortex, welcome to my secret hideout. 🚀
 

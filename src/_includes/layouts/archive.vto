@@ -2,10 +2,10 @@
 layout: layouts/base.vto
 bodyClass: body-tag
 ---
-<header class="page-header">
+<header class="mb-8">
   <img class="splash-screen" src="/uploads/splash-ethereal-spaces.png" alt=""/>
 
-  <h1 class="page-title">{{ title }}</h1>
+  <h1 class="m-0 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ title }}</h1>
 
   <p>
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="3" cy="13" r="2" fill="currentColor"/><path d="M14 13C14 6.925 9.075 2 3 2M9 13a6 6 0 0 0-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> RSS:
@@ -20,12 +20,12 @@ bodyClass: body-tag
 {{ if pagination.page === 1 }}
 {{ set pageTags = search.pages("type=tag", "tag") }}
 {{ if pageTags.length }}
-<nav class="page-navigation">
-  <h2>{{ i18n.search.tags }}:</h2>
+<nav class="mb-4">
+  <h2 class="tracking-tight font-semibold my-2">{{ i18n.search.tags }}:</h2>
 
-  <ul class="page-navigation-tags">
+  <ul class="list-none m-0 p-0 flex flex-wrap gap-1">
   {{ for page of pageTags }}
-    <li><a href="{{ page.url }}" class="badge">{{ page.tag }}</a></li>
+    <li><a href="{{ page.url }}" class="border border-neutral-500 rounded-sm px-2 py-1 hover:text-white hover:bg-neutral-800">{{ page.tag }}</a></li>
   {{ /for }}
   </ul>
 </nav>
@@ -35,20 +35,20 @@ bodyClass: body-tag
 {{ include "templates/post-list.vto" { postslist: results } }}
 
 {{ if pagination.totalPages !== 1 }}
-<nav class="page-pagination pagination">
+<nav class="border-t mt-6 border-neutral-500 page-pagination pagination">
   <ul>
     {{- if pagination.previous }}
-    <li class="pagination-prev">
+    <li class="my-4">
       <a href="{{ pagination.previous }}" rel="prev">{{ i18n.nav.previous }}</a>
     </li>
     {{ /if }}
 
-    <li class="pagination-page">
+    <li class="my-4">
       {{ i18n.nav.page }} {{ pagination.page }}
     </li>
 
     {{- if pagination.next }}
-    <li class="pagination-next">
+    <li class="my-4">
       <a href="{{ pagination.next }}" rel="next">{{ i18n.nav.next }}</a>
     </li>
     {{ /if }}

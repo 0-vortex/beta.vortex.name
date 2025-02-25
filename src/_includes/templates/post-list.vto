@@ -1,7 +1,7 @@
 <ul class="postList">
   {{ for post of postslist }}
   <li class="post">
-    <h2 class="post-title">
+    <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
       <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
         {{ post.title || post.url }}
       </a>

@@ -19,17 +19,17 @@
     {{ it.extra_head?.join("\n") }}
   </head>
   <body>
-    <nav class="navbar">
-      <a href="/" class="navbar-home">
+    <nav class="bg-white dark:bg-primary text-current dark:text-white flex flex-wrap mb-4 gap-2 p-2 items-center justify-between">
+      <a href="/" class="navbar-home flex">
         {{ if it.logo }}
           <img src="/{{ it.logo }}" alt=""/>
         {{ /if }}
         <strong>{{ metas.site }}</strong>
       </a>
 
-      <div class="navbar-banner"></div>
+      <div class="flex flex-auto"></div>
 
-      <ul class="navbar-links">
+      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-2 font-semibold">
       {{- for entry of search.pages("menu.visible=true", "menu.order") }}
         <li>
           <a href="{{ entry.url }}"{{ if entry.url == url }} aria-current="page"{{ /if }}>

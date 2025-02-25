@@ -16,14 +16,4 @@
   & .post-details {
     font: var(--font-small);
   }
-
-  & .post-title {
-    font: var(--font-title);
-    letter-spacing: var(--font-title-spacing);
-    display: block;
-
-    & a {
-      text-decoration: none;
-    }
-  }
 }
