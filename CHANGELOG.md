@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.2...v1.2.0) (2025-02-25)
+
+### 🍕 Features
+
+* start rewriting css to tailwind ([3f0924e](https://github.com/0-vortex/beta.vortex.name/commit/3f0924e5430081f90e22268acc84cd8b5b778ec0))
+
 ## [1.1.2](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.1...v1.1.2) (2025-02-23)
 
 ### 🔥 Performance Improvements
