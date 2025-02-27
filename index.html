@@ -28,16 +28,16 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
 </head>
-  <body>
+  <body class="min-h-screen w-full m-0 p-0 bg-background">
     <nav class="bg-white dark:bg-primary text-current dark:text-white flex flex-wrap mb-4 gap-2 p-2 items-center justify-between">
-      <a href="/" class="navbar-home flex">
-          <img src="/favicon.svg" alt="">
-        <strong>TED Vortex</strong>
+      <a href="/" class="min-w-[150px] p-1 flex border border-transparent bg-transparent no-underline hover:border-black/10 hover:bg-white/10">
+          <img class="max-h-10 max-w-[40px] mr-2" src="/favicon.svg" alt="">
+        <strong class="font-bold self-center">TED Vortex</strong>
       </a>
 
       <div class="flex flex-auto"></div>
 
-      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-2 font-semibold">        <li>
+      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-4 font-semibold">        <li>
           <a href="/pages/about/">
             About me
           </a>
@@ -71,25 +71,25 @@
       </ul>
     </nav>
 
-    <main class="body-home">
+    <main class="body-home opacity-[99%] p-12 max-w-[90em] min-h-[70vh] mx-auto my-0 bg-background">
       <header class="mb-8">
-  <img class="splash-screen" src="/uploads/splash-ethereal-spaces.png" alt="">
+  <img class="block w-full h-auto max-w-full max-h-[300px] object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/splash-ethereal-spaces.png" alt="">
 
-  <h1 class="m-0 text-balance tracking-tight text-current text-6xl font-semibold font-sans">WE ARE VORTEX</h1>
+  <h1 class="my-4 text-balance tracking-tight text-current text-6xl font-semibold font-sans">WE ARE VORTEX</h1>
 
   <div class="search" id="search"></div>
 </header>
 
-<section class="postList">
-  <article class="post">
-    <header class="post-header">
+<section class="p-0">
+  <article class="mt-4">
+    <header class="mb-2">
       <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
         <a href="/revolutionizing-digital-solutions/">
           Revolutionizing Digital Solutions: Embracing Cross-Platform Efficiency, Robust End-to-End Encryption and Human-Centric AI Analytics
         </a>
       </h2>
 
-      <div class="post-details flex flex-row gap-3 items-center text-neutral-300">
+      <div class="flex flex-row gap-3 items-center text-neutral-300 text-sm">
       <p>by TED Vortex</p>
 
   <p>
@@ -116,33 +116,22 @@
 This simplifies the design process and user experience to a minimum required, keeping our ideas close to the users at all times.</p>
 <p>While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.</p>
 <h2>End-to-End Encryption</h2>
-<p>We want to build ASAP solutions, that is software As Secure As Possible.
-End-to-end encryption is a minimal overhead which becomes automated when implemented in every step of our workflow.</p>
-<p>Compliance with ISO 27XXX has become quite necessary to turn around corporate clients but the necessity to create a company wide security standard exists without the need of business level recognition.</p>
-<h2>Assisted Intelligence Analytics</h2>
-<p>While the concept of Artificial Intelligence is interesting human input is always required as they do not think for themselves.</p>
-<p>A mix of machine learning and human pattern review is something we are actively aiming for. A/B testing has been proved to provide beneficial results and machine learning is just one of the means we are using to automate feature testing.</p>
-<h2>Future Proofing</h2>
-<p>Software development has become very unstable with the high influx of new people learning "stuff" and the emerging hybrid specialisations of businesses into the TECH domain, being able to predict software and market development has become tedious and uncertain.</p>
-<p>Most non-native code is a collage of open source dependencies to the point where in average 5% of common written code is <em>real</em>, the rest being a complex dependency tree.</p>
-<p>In reality good software has a certain impact on technology, people and markets. Being able to observe these patterns we are able to make something called "safe decisions", minimising disaster chance and recovery downtime.</p>
-<h2>Continuous Delivery</h2>
-<p>Zero downtime, zero stress.</p>
+<p>We want to build ASAP solutions, that</p>
     </div>
 
     <a href="/revolutionizing-digital-solutions/" class="inline-block">
       Continue reading →
     </a>
   </article>
-  <article class="post">
-    <header class="post-header">
+  <article class="mt-4">
+    <header class="mb-2">
       <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
         <a href="/posts/pine-healthcare-whitepaper/">
           Pine Healthcare Whitepaper Draft
         </a>
       </h2>
 
-      <div class="post-details flex flex-row gap-3 items-center text-neutral-300">
+      <div class="flex flex-row gap-3 items-center text-neutral-300 text-sm">
       <p>by TED Vortex</p>
 
   <p>
@@ -169,82 +158,22 @@ End-to-end encryption is a minimal overhead which becomes automated when impleme
 
     <div class="post-excerpt body">
       <h2>HL7 FHIR</h2>
-<p>Health Level Seven or HL7 refers to a set of international standards for transfer of clinical and administrative data between software applications used by various healthcare providers. These standards focus on the application layer, which is "layer 7" in the OSI model. The HL7 standards are produced by Health Level Seven International, an international standards organization, and are adopted by other standards issuing bodies such as American National Standards Institute and International Organization for Standardization.</p>
-<p>Hospitals and other healthcare provider organizations typically have many different computer systems used for everything from billing records to patient tracking. All of these systems should communicate with each other (or "interface") when they receive new information, or when they wish to retrieve information, but not all do so.</p>
-<p>HL7 International specifies a number of flexible standards, guidelines, and methodologies by which various healthcare systems can communicate with each other. Such guidelines or data standards are a set of rules that allow information to be shared and processed in a uniform and consistent manner. These data standards are meant to allow healthcare organizations to easily share clinical information. Theoretically, this ability to exchange information should help to minimize the tendency for medical care to be geographically isolated and highly variable.</p>
-<p>You can read more on:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Health_Level_7">Wikipedia</a></li>
-<li><a href="https://confluence.hl7.org/display/FHIR/Dental+Data+Exchange">Dental Data Exchange</a></li>
-<li><a href="https://www.hl7.org/fhir/codesystem-tooth.html">FHIR Codesystem</a></li>
-</ul>
-<h2>Electronic Health Records Services</h2>
-<p>In practice the complexity of the standard and existing health care real life demands and regulations produced a new market niche dedicated to interoperability and FHIR implementations on top of existing software management systems.</p>
-<p>While the highlighted products and companies are in no way affiliated to this paper, they represent various solutions to the interoperability layer <strong>without</strong> enabling the user to own any of his data and medical records:</p>
-<ul>
-<li><a href="https://gemmsone.com/index.php?option=com_content&amp;view=article&amp;id=807&amp;Itemid=552">Gemms</a></li>
-<li><a href="https://www.oracle.com/middleware/technologies/soasuite.html">Oracle SOA</a></li>
-<li><a href="https://www.infor.com/products/cloverleaf">CloverLeaf</a></li>
-<li><a href="https://www.magicsoftware.com/integration-solutions/healthcare/">Magic</a></li>
-<li><a href="https://www.cerner.com/pages/careaware">CareAware</a></li>
-<li><a href="https://www.changehealthcare.com/solutions/clinical-network#sort=relevancy&amp;numberOfResults=12">Change Healthcare</a></li>
-<li><a href="https://www.lyniate.com/corepoint/benefits/">CorePoint</a></li>
-<li><a href="https://www.qvera.com/hl7-interface-engine/">Qvera</a></li>
-<li><a href="https://www.nexhealth.com/for/operations">NexHealth</a></li>
-<li><a href="https://www.definitivehc.com/platform#databases">Definitive Healthcare</a></li>
-<li><a href="https://www.redoxengine.com/product/">Redox</a></li>
-</ul>
-<h2>Pine Motivation</h2>
-<p>The solution described as Pine is motivated by the fact that open access to patient health records is difficult even when using the vast majority of existing solutions and in similar percentage, centralised.</p>
-<p>When technology is centralized, it typically means that it is controlled and run by a single company, government, or individual. Decentralized technology on the other hand, is run by a network of participants that no one actor can control or shut down. Here are some benefits of decentralization:</p>
-<ol>
-<li><strong>Users don’t have to put trust in a central authority.</strong> We trust companies and governments with our information and money all the time, and it is completely ok to make these decisions on a case by case basis. But we see plenty of examples where this trust lets us down to varying degrees, ranging from the product that you trusted to backup all your photos getting shut down when the startup gets bought or goes out of business, to the social media company selling your data to advertisers who follow you around the internet. In a well designed decentralized network, you should be able to reduce or eliminate the trust that you’re required to put into third parties.</li>
-<li><strong>There is less likely to be a single point of failure.</strong> We see single points of failure all the time in the form of outages of centralized web sites. Gmail goes down and productivity halts as you can’t get your email. Your bank’s web site shuts down for maintenance and you can’t do an online transfer to pay your bills. In decentralized networks, no one node going down can take down the entire network, so no matter how many users come and go, your applications should remain up and running.</li>
-<li><strong>There is less censorship.</strong> It is becoming increasingly common that governments shut down their citizens’ access to social media, as they attempt to censor reports of what is going on internally. It is easy for them to shut down access to Twitter, as all they have to do is stop traffic going to Twitter’s central servers. But it is far more difficult for them to censor traffic on a peer to peer network, in which every single outbound packet being sent could be communicating with another peer on the decentralized network, who can then forward that message along.</li>
-<li><strong>Decentralized networks are more likely to be open development platforms.</strong> This means that anyone can build amazing tools, products, and services on top of decentralized networks. Contrast this with centralized technology which is more often closed off with intentionally limited development opportunities. Open and decentralized doesn’t mean that companies can’t make money. In fact, it means the opposite, as the more great products and tools that are built, the larger the network effects are locking users into the network, and therefore the more opportunities to build great businesses on top. The world wide web itself is a great example of an open network, in which many great businesses such as Amazon, found opportunities to grow enormously due to the network effects of all the great things being built on top of the network.</li>
-<li><strong>There is potential for network ownership alignment.</strong> This is the idea that the people who contribute value to a decentralized network receive ownership or economic stake in the network, that becomes more valuable as the network grows. This is one of the most exciting things that blockchain technology brings to decentralized networks, as it allows economics to be designed into the networks themselves, to create the right incentives for early participants to become powerhouse evangelists and value-contributing users. Contrast this to a centralized network where only the company controlling the network receives value as the network grows, and you can see why it’s exciting for users to participate in a decentralized network.</li>
-<li><strong>Decentralized networks can be more meritocratic.</strong> The best product, service, or content should be more likely to be recognized and rewarded over time when everyone is playing by the same, transparent rules. If traffic, attention, and economics are distributed instead behind a closed, centralized algorithm, it’s possible that the system is less meritocratic.</li>
-</ol>
-<p>One application of public ledgers is the ability to verify identity. In a nutshell, a verifiable credential is a piece of information that a third party can validate digitally.</p>
-<p>Verifiable Credentials is one of the most exciting and transformative areas of innovation. Verifiable Credentials and Decentralized Identifiers help you share your verifiable credentials without giving up your privacy. No one company or institution can control or store your information centrally — you can revoke your verifiable credentials at any time.</p>
-<p>Clinical trial management is another area where blockchains can be of use. For instance, as more laboratories work with large molecules and compounds that originate from various place, an immutable record becomes indispensable for validating information associated to various stages of clinical trials especially when laboratories are located in different parts of the globe.</p>
-<p>In the context of periodontology, multiple actors can verify existing datasets anonymously as well as all the open source code and implementations and we can also apply multiple forms of assisted intelligence to the data sets. While iniatially we are deploying a bias detection and learning algorithm to focus on the researched levels, once the anonimity layer is audited we can apply reinforcement learning to multiple areas impacting user experience.</p>
-<p>Leveraging open access technologies, providers and standards we can give end users complete control over:</p>
-<ul>
-<li>their data and identity</li>
-<li>the way their medical records are used</li>
-<li>which entities can access your information</li>
-<li>which periodontology model to use (insert pine research reference)</li>
-<li>the location where your data is stored (private blockchain, interplanetary file systems)</li>
-</ul>
-<h2>High level architecture</h2>
-<h3>My Pine Care</h3>
-<p>Main domain for social interactions and public storefront.</p>
-<p>This application is designed to act as a documentation and research centralised hub for all the tools.</p>
-<h3>Pine Dental</h3>
-<p><a href="https://reactnative.dev">React Native</a> open source cross platform client deployed to web, portable ios and android, desktop windows, ubuntu and apple.</p>
-<p>This application is designed to act as a periodontology assistant and research tool.</p>
-<h3>Pine Access</h3>
-<p>De-facto blockchain identity verification and credentials management bridge. Assessment of existing technologies and implementation pending but one implementation quirk of this is the <a href="https://web3js.readthedocs.io/en/v1.3.4/">Web3</a> backend being plugabble to sidechains and private organisations.</p>
-<p>This application is designed to act as a tool to manage access to your private information and records.</p>
-<h3>Pine Backup</h3>
-<p>De-facto blockchain storage solution through <a href="https://ipfs.io">IPFS</a>. Full access to the storage component is enabled from application launch, however the stability of decentralised solutions, platform, global security and data regulations concerns require this layer to be open to public audit and extension.</p>
-<p>This application is designed to act as a data integrity and encryption solution for all your data spread across public or public chains.</p>
+<p>Health Level Seven or HL7 refers to a set of international standards for transfer of clinical and administrative data between software applications used by various healthcare providers. These standards focus on the application layer, which is "layer 7" in the OSI model. The HL7 standards are produced by Health Level Seven International, an international standards organization, and are adopted by other st</p>
     </div>
 
     <a href="/posts/pine-healthcare-whitepaper/" class="inline-block">
       Continue reading →
     </a>
   </article>
-  <article class="post">
-    <header class="post-header">
+  <article class="mt-4">
+    <header class="mb-2">
       <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
         <a href="/posts/continuous-integration-and-analysis/">
           Continuous integration and analysis tools for open source nodeJS development
         </a>
       </h2>
 
-      <div class="post-details flex flex-row gap-3 items-center text-neutral-300">
+      <div class="flex flex-row gap-3 items-center text-neutral-300 text-sm">
       <p>by TED Vortex</p>
 
   <p>
@@ -270,224 +199,7 @@ End-to-end encryption is a minimal overhead which becomes automated when impleme
     <div class="post-excerpt body">
       <p>Initial idea is based on the list available at https://github.com/ligurio/Continuous-Integration-services/blob/master/continuous-integration-services-list.md.</p>
 <p>It contains only services that provide a sensible amount of features for open source projects or non-profit organisations. I've also added several tools I used or tested with a minimal up and running configuration.</p>
-<p>To summarise the review factors for this document:</p>
-<ul>
-<li>open source tools</li>
-<li>suitable for nodeJS application development</li>
-<li>minimal developer downtime and configuration setback</li>
-<li>fast build times (RAD)</li>
-</ul>
-<h2>The list covers services that can be broken down into "type" categories:</h2>
-<ol>
-<li><strong><a href="#continuous-integration">Continuous Integration</a></strong></li>
-<li><strong><a href="#continuous-delivery">Continuous Delivery</a></strong></li>
-<li><strong><a href="#continuous-analysis">Continuous Analysis</a></strong></li>
-</ol>
-<p>The list of services can be narrowed down based on main programming language target audience (opinionated):</p>
-<p><strong>NodeJS:</strong></p>
-<ol>
-<li><a href="#travis-ci">Travis</a></li>
-<li><a href="#snap-ci">Snap</a></li>
-<li><a href="#bithound">Bithound</a></li>
-<li><a href="#snyk">Snyk</a></li>
-<li><a href="#dependency-ci">Dependency CI</a></li>
-<li><a href="#coveralls">Coveralls</a></li>
-</ol>
-<p><strong>Docker:</strong></p>
-<ol>
-<li><a href="#wercker">Wercker</a></li>
-<li><a href="#codeship">Codeship</a></li>
-<li><a href="#buildkite">Buildkite</a></li>
-<li><a href="#coveralls">Coveralls</a></li>
-</ol>
-<p><strong>Ruby:</strong></p>
-<ol>
-<li><a href="#codeship">Codeship</a></li>
-<li><a href="#coveralls">Coveralls</a></li>
-</ol>
-<h2>Continuous Integration:</h2>
-<h3><a href="https://travis-ci.org">Travis CI</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>integrated with virtually every 3rd party</li>
-<li>fast (for ubuntu machines)</li>
-<li>free build matrix</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>local testing version is not free</li>
-<li>missing red hat based distros</li>
-</ul>
-<p><strong>Verdict</strong>: <em><strong>current preferred solution overall.</strong></em></p>
-<h3><a href="https://snap-ci.com">Snap CI</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>support for database adaptors</li>
-<li>support for pipes</li>
-<li>support for stages</li>
-<li>bamboo like usage</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>full integration takes some configuration downtime</li>
-</ul>
-<p><strong>Verdict</strong>: This is the current preferred solution for enterprise level applications.</p>
-<h3><a href="https://buildkite.com">Buildkite</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github support</li>
-<li>docker support</li>
-<li>supports multiple db engines</li>
-<li>pipes</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>manual configuration on everything</li>
-</ul>
-<p><strong>Verdict</strong>: Looks like the best overall solution for docker applications but the limitations and level of configuration required makes this service difficult to use for nodeJS applications. When considering microservices and multiple backend technologies this tool shines.</p>
-<h3><a href="https://semaphoreci.com">Semaphore CI</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>latest node development not supported</li>
-<li>no build matrix</li>
-<li>poor integration with other services</li>
-</ul>
-<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
-<h3><a href="https://magnum-ci.com">Magnum CI</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket/hosted</li>
-<li>developer flow</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>node 0.10 is highest version</li>
-<li>deployed technologies make the service unmaintainable</li>
-</ul>
-<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
-<h3><a href="https://drone.io">Drone</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket/google code</li>
-<li>support for all web languages</li>
-<li>support for database adaptors</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>node 0.10 is highest version</li>
-<li>deployed technologies make the service unmaintainable</li>
-</ul>
-<p><strong>Verdict</strong>: I don't find this service suitable for nodeJS application development.</p>
-<h2>Continuous Delivery</h2>
-<h3><a href="http://wercker.com">Wercker</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>docker support</li>
-<li>kubernetes support</li>
-<li>pipes</li>
-<li>local testing</li>
-<li>awesome developer flow</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>not very useful for simple NPM packages</li>
-</ul>
-<p><strong>Verdict</strong>: Looks like the most solid continuous integration solution out there. Will test this in production with a react application.</p>
-<h3><a href="https://codeship.com">Codeship</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>docker native</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>ruby targeted audience</li>
-<li>OSS features limited vastly</li>
-</ul>
-<p><strong>Verdict</strong>: Looks like a solid choice for ruby/docker inspired projects. Performance seems good for small projects. With competitive technologies I would prefer this service for ruby development and asset revision.</p>
-<h3><a href="https://app.shippable.com">Shippable</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>docker support</li>
-<li>pipes</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>major user experience issues</li>
-<li>unable to select free license</li>
-</ul>
-<p><strong>Verdict</strong>: I would like to use this service ...</p>
-<h3><a href="https://factor.io">Factor</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github support</li>
-<li>custom workflow generator</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>ruby based</li>
-<li>lacks open source integrations</li>
-</ul>
-<p><strong>Verdict</strong>: It's only useful in the ruby ecosystem with complex workflows. Most of the features this service offers are provided by several packages and standards via NPM.</p>
-<h2>Continuous Analysis</h2>
-<h3><a href="https://www.bithound.io">Bithound</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>local version</li>
-<li>code quality</li>
-<li>dependency security advisory</li>
-<li>builds on top of NSP</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>eslint highest supported version is 2.0</li>
-</ul>
-<p><strong>Verdict</strong>: So far very good and fast tool with extremely fast customer support.</p>
-<h3><a href="https://snyk.io">Snyk</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>github/bitbucket</li>
-<li>local check</li>
-<li>builds on top of nsp</li>
-<li>builds on top of src:clr security advisory</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>monitor command can fail (local backfall)</li>
-</ul>
-<p><strong>Verdict</strong>: Using this tool on top of</p>
-<h3><a href="https://dependencyci.com">Dependency CI</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>lightning fast setup due to lack of features</li>
-<li>vast number of programming languages supported</li>
-<li>go/julia/swift wow</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>not configurable</li>
-<li>nodeJS purpose is completely superseded by other tools already open source</li>
-</ul>
-<p><strong>Verdict</strong>: This tool is useful for projects that don't have a complete generic stack, for example a plugin theme pushed to NPM might not need complex integrations and this tools would serve well to notify in the rare cases of lost/forgotten packages.</p>
-<h3><a href="https://coveralls.io">Coveralls CC</a></h3>
-<p><strong>Pro</strong>:</p>
-<ul>
-<li>support for multiple programming languages</li>
-<li>support for multiple CIs</li>
-</ul>
-<p><strong>Con</strong>:</p>
-<ul>
-<li>local tests are cumbersome</li>
-</ul>
-<p><strong>Verdict</strong>: Using this as part of the LCOV data upload gulp task in parallel with bithound.</p>
+<p>To summarise the review factors for this doc</p>
     </div>
 
     <a href="/posts/continuous-integration-and-analysis/" class="inline-block">

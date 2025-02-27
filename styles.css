@@ -1,452 +1,4 @@
-
-@import 'https://unpkg.com/@lumeland/ds@0.5.2/ds.css';
-/* Lume's design system */
-/* Custom components */
-.navbar-search {
-  padding: 0 1em;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-.navbar-home {
-  min-width: 150px;
-  border: 1px solid transparent;
-  background-color: transparent;
-  text-decoration: none;
-  &:hover {
-    border-color: rgb(23, 23, 23, 0.1);
-    background-color: rgb(255, 255, 255, 0.1);
-  }
-  img {
-    max-height: 40px;
-    max-width: 100%;
-    margin-right: 0.5rem;
-  }
-  strong {
-    font: var(--font-ui-bold);
-    align-self: center;
-  }
-}
-.postList {
-  list-style: none;
-  padding: 0;
-
-  & article.post + article.post {
-    margin-top: var(--row-gap-medium);
-  }
-  & li.post + li.post {
-    margin-top: var(--row-gap-small);
-  }
-
-  & .post-header {
-    margin-bottom: var(--row-gap-xsmall);
-  }
-
-  & .post-details {
-    font: var(--font-small);
-  }
-}
-.comments-section {
-  margin-top: 5em;
-}
-.comments-header {
-  & h2 {
-    font: var(--font-title);
-    letter-spacing: var(--font-title-spacing);
-    margin: 0;
-    color: var(--color-base);
-  }
-  & p {
-    font: var(--font-ui);
-    color: var(--color-dim);
-    margin: 0.5em 0;
-  }
-}
-.comments {
-  display: block;
-  padding: 2em;
-  margin-top: 2em;
-  background: var(--color-highlight);
-  border-radius: var(--border-radius);
-  border: solid 1px var(--color-line);
-  color: var(--color-dim);
-  font: var(--font-small);
-
-  @media (max-width: 450px) {
-    margin-left: calc(-15vw / 2);
-    margin-right: calc(-15vw / 2);
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    padding: calc(15vw / 2);
-  }
-
-  & a {
-    color: currentColor;
-  }
-
-  & ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  & li {
-    container-type: inline-size;
-
-    ul {
-      margin-top: 2em;
-      padding-top: 2em;
-      border-top: solid 1px var(--color-line);
-      margin-left: min(var(--indent), 10cqw);
-    }
-  }
-
-  & li + li {
-    margin-top: 2em;
-    padding-top: 2em;
-    border-top: solid 1px var(--color-line);
-  }
-  & article {
-    max-width: 600px;
-  }
-  > ul {
-    --avatar-size: clamp(32px, 10cqw, 50px);
-    --indent: calc(var(--avatar-size) + 15px);
-  }
-
-  .comment-avatar {
-    width: var(--avatar-size);
-    height: var(--avatar-size);
-    border-radius: 6px;
-    float: left;
-    margin-right: 14px;
-    box-shadow: 0 0 1px #0009;
-  }
-  .comment-user {
-    text-decoration: none;
-    display: block;
-    position: relative;
-  }
-  .comment-author {
-    position: absolute;
-    left: calc(var(--avatar-size) - 15px);
-    top: calc(var(--avatar-size) - 15px);
-    background: var(--color-highlight);
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    color: var(--color-primary);
-  }
-  .comment-user:hover .comment-username {
-    text-decoration: underline;
-  }
-  .comment-username {
-    margin-right: 0.5em;
-    color: var(--color-text);
-  }
-  .comment-useraddress {
-    font-style: normal;
-  }
-  .comment-time {
-    font-size: small;
-    display: flex;
-    -moz-column-gap: 0.3em;
-         column-gap: 0.3em;
-    align-items: center;
-
-    svg {
-      width: 1em;
-      height: 1em;
-      fill: currentColor;
-    }
-  }
-  .comment-address {
-    color: currentColor;
-    text-decoration: none;
-    display: block;
-    padding-left: var(--indent);
-    margin-top: 0.2em;
-  }
-  .comment-address:hover {
-    text-decoration: underline;
-  }
-  .comment-body {
-    margin-top: 1em;
-    margin-left: var(--indent);
-    line-height: 1.5;
-
-    .invisible {
-      display: none;
-    }
-    .ellipsis::after {
-      content: '…';
-    }
-    .mention {
-      text-decoration: none;
-      color: var(--color-text);
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .comment-body p {
-    margin: 0.5em 0 0;
-  }
-  .comment-counts {
-    display: flex;
-    -moz-column-gap: 1em;
-         column-gap: 1em;
-    font-size: small;
-
-    & svg {
-      color: var(--color-primary);
-    }
-  }
-  .comment-counts > span {
-    display: flex;
-    align-items: center;
-    -moz-column-gap: 0.3em;
-         column-gap: 0.3em;
-  }
-}
-.error-banner {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
-}
-.error-banner .error-404 {
-  margin: 112px auto 2em;
-  padding-left: 160px;
-  display: inline-block;
-  height: 112px;
-  background-position: top left;
-  animation: 0.5s ease-in-out fade-slide-left;
-}
-.error-banner .error-404, .error-banner .error-404:before, .error-banner .error-404:after {
-  display: inline-block;
-  position: relative;
-  background-repeat: no-repeat;
-  content: '';
-}
-.error-banner .error-404:before, .error-banner .error-404:after {
-  width: 160px;
-  height: 112px;
-}
-.error-banner .error-404:before {
-  top: -38.6206896552px;
-  margin-left: -90px;
-  z-index: -1;
-  background-position: top left;
-  animation: 1s ease-in-out fade-slide-left;
-}
-.error-banner .error-404:after {
-  top: -77.2413793103px;
-  margin-left: -90px;
-  z-index: -10;
-  background-position: top left;
-  animation: 1.5s ease-in-out fade-slide-left;
-}
-.error-banner .error-404 {
-  background-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="159.8" height="89.5" viewBox="0 0 159.8 89.5"%3E%3Cpath fill="%231d2125" d="M60 0L40 11.2V33.6L20 22.4 0 33.6v22.3l60 33.6 39.9-22.3 39.9 22.3 20-11.2V56z"/%3E%3Cpath fill="%23969696" d="M60 5.2l-15.3 8.5L60 22.3l15.3-8.6L60 5.2M20 27.6L4.7 36.2 20 44.7l15.3-8.6L20 27.6M40 38.8l-15.3 8.5L40 55.9l15.3-8.6L40 38.8M79.9 16.4L64.6 25l15.3 8.6L95.1 25l-15.2-8.6M99.9 27.6l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M80 38.9l-15.3 8.5L80 56l15.3-8.6L80 38.9M119.9 38.9l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M60 50l-15.3 8.5L60 67.1l15.3-8.6L60 50M139.8 50l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5"/%3E%3C/svg%3E');
-}
-.error-banner .error-404:before {
-  background-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="159.8" height="111.8" viewBox="0 0 159.8 111.8"%3E%3Cpath fill="%231d2125" d="M60 0L0 33.6v22.3l99.9 55.9 59.9-33.5V56z"/%3E%3Cpath fill="%23969696" d="M60 5.2l-15.3 8.5L60 22.3l15.3-8.6L60 5.2M40 16.5L24.7 25 40 33.5 55.3 25 40 16.5M20 27.6L4.7 36.2 20 44.7l15.3-8.6L20 27.6M40 38.8l-15.3 8.5L40 55.9l15.3-8.6L40 38.8M79.9 16.4L64.6 25l15.3 8.6L95.1 25l-15.2-8.6M99.9 27.6l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M119.9 38.9l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M60 50l-15.3 8.5L60 67.1l15.3-8.6L60 50M80 61.2l-15.3 8.5L80 78.3l15.3-8.6L80 61.2M139.8 50l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M119.8 61.2l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M99.9 72.4l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5"/%3E%3C/svg%3E');
-}
-.error-banner .error-404:after {
-  background-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="159.8" height="89.5" viewBox="0 0 159.8 89.5"%3E%3Cpath fill="%231d2125" d="M60 0L40 11.2V33.6L20 22.4 0 33.6v22.3l60 33.6 39.9-22.3 39.9 22.3 20-11.2V56z"/%3E%3Cpath fill="%23969696" d="M60 5.2l-15.3 8.5L60 22.3l15.3-8.6L60 5.2M20 27.6L4.7 36.2 20 44.7l15.3-8.6L20 27.6M40 38.8l-15.3 8.5L40 55.9l15.3-8.6L40 38.8M79.9 16.4L64.6 25l15.3 8.6L95.1 25l-15.2-8.6M99.9 27.6l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M80 38.9l-15.3 8.5L80 56l15.3-8.6L80 38.9M119.9 38.9l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M60 50l-15.3 8.5L60 67.1l15.3-8.6L60 50M139.8 50l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5"/%3E%3C/svg%3E');
-}
-.title {
-  width: 50vw;
-  margin: auto;
-  text-align: center;
-}
-@keyframes fade-slide-left {
-  0% {
-    opacity: 0;
-    transform: translate(28px, 15px);
-  }
-  50% {
-    opacity: 0;
-    transform: translate(28px, 15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-/* background */
-body {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: var(--color-background);
-  background-image:
-    linear-gradient(
-      45deg,
-      #000,
-      #000 0.5%,
-      #008f8c 0.5%,
-      #008f8c 7.6%,
-      #000 7.6%,
-      #000 8.642857143%,
-      #0fc2c0 8.642857143%,
-      #0fc2c0 15.64285714%,
-      #000 15.64285714%,
-      #000 16.88571429%,
-      #0caba8 16.88571429%,
-      #0caba8 23.84285714%,
-      #000 23.84285714%,
-      #000 25%,
-      transparent 25%
-    ),
-    linear-gradient(
-    -45deg,
-    #000,
-    #000 0.5%,
-    #008f8c 0.5%,
-    #008f8c 7.6%,
-    #000 7.6%,
-    #000 8.642857143%,
-    #0fc2c0 8.642857143%,
-    #0fc2c0 15.64285714%,
-    #000 15.64285714%,
-    #000 16.88571429%,
-    #0caba8 16.88571429%,
-    #0caba8 23.84285714%,
-    #000 23.84285714%,
-    #000 25%,
-    transparent 25%
-  ),
-    linear-gradient(45deg, transparent 73.85714286%, #000 73.85714286%, #000 75%, transparent 75%),
-    linear-gradient(-45deg, transparent 73.85714286%, #000 73.85714286%, #000 75%, transparent 75%),
-    linear-gradient(
-    45deg,
-    transparent 66.85714286%,
-    #0caba8 66.85714286%,
-    #0caba8 73.85714286%,
-    transparent 73.85714286%
-  ),
-    linear-gradient(
-    -45deg,
-    transparent 66.85714286%,
-    #0caba8 66.85714286%,
-    #0caba8 73.85714286%,
-    transparent 73.85714286%
-  ),
-    linear-gradient(45deg, transparent 65.71428571%, #000 65.71428571%, #000 66.85714286%, transparent 66.85714286%),
-    linear-gradient(-45deg, transparent 65.71428571%, #000 65.71428571%, #000 66.85714286%, transparent 66.85714286%),
-    linear-gradient(
-    45deg,
-    transparent 58.71428571%,
-    #0fc2c0 58.71428571%,
-    #0fc2c0 65.71428571%,
-    transparent 65.71428571%
-  ),
-    linear-gradient(
-    -45deg,
-    transparent 58.71428571%,
-    #0fc2c0 58.71428571%,
-    #0fc2c0 65.71428571%,
-    transparent 65.71428571%
-  ),
-    linear-gradient(45deg, transparent 57.57142857%, #000 57.57142857%, #000 58.71428571%, transparent 58.71428571%),
-    linear-gradient(-45deg, transparent 57.57142857%, #000 57.57142857%, #000 58.71428571%, transparent 58.71428571%),
-    linear-gradient(
-    45deg,
-    transparent 50.57142857%,
-    #008f8c 50.57142857%,
-    #008f8c 57.57142857%,
-    transparent 57.57142857%
-  ),
-    linear-gradient(
-    -45deg,
-    transparent 50.57142857%,
-    #008f8c 50.57142857%,
-    #008f8c 57.57142857%,
-    transparent 57.57142857%
-  ),
-    linear-gradient(45deg, transparent 49.42857143%, #000 49.42857143%, #000 50.57142857%, transparent 50.57142857%),
-    linear-gradient(-45deg, transparent 49.42857143%, #000 49.42857143%, #000 50.57142857%, transparent 50.57142857%),
-    linear-gradient(
-    45deg,
-    transparent 42.42857143%,
-    #015958 42.42857143%,
-    #015958 49.42857143%,
-    transparent 49.42857143%
-  ),
-    linear-gradient(
-    -45deg,
-    transparent 42.42857143%,
-    #015958 42.42857143%,
-    #015958 49.42857143%,
-    transparent 49.42857143%
-  ),
-    linear-gradient(45deg, transparent 41.28571429%, #000 41.28571429%, #000 42.42857143%, transparent 42.42857143%),
-    linear-gradient(-45deg, transparent 41.28571429%, #000 41.28571429%, #000 42.42857143%, transparent 42.42857143%),
-    linear-gradient(
-    45deg,
-    transparent 34.28571429%,
-    #023535 34.28571429%,
-    #023535 41.28571429%,
-    transparent 41.28571429%
-  ),
-    linear-gradient(
-    -45deg,
-    transparent 34.28571429%,
-    #023535 34.28571429%,
-    #023535 41.28571429%,
-    transparent 41.28571429%
-  ),
-    linear-gradient(45deg, transparent 33.142857143%, #000 33.142857143%, #000 34.28571429%, transparent 34.28571429%),
-    linear-gradient(-45deg, transparent 33.142857143%, #000 33.142857143%, #000 34.28571429%, transparent 34.28571429%);
-  background-size: 100px 100px;
-  background-position: 0 0;
-}
-img.splash-screen, img.splash-portrait {
-  display: block;
-  max-width: 100%;
-  max-height: 300px;
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: var(--row-gap-small);
-  border: solid 1px #008f8cff;
-  -o-object-position: 50% top;
-     object-position: 50% top;
-}
-img.splash-screen {
-  max-height: 300px;
-}
-img.splash-portrait {
-  max-height: 60vh;
-}
-img.splash-screen.max {
-  max-height: 100vh;
-}
-/* Make the links black */
-:root {
-  --color-link: var(--color-base);
-  --color-link-hover: var(--color-dim);
-}
-/* Page layout */
-main {
-  opacity: 99%;
-  padding: var(--row-gap-small);
-  max-width: min(100% - var(--row-gap-small), 90em);
-  min-height: 70vh;
-  margin: 0 auto;
-  background-color: var(--color-background);
-}
-/* Search tweak */
-.search {
-  margin-top: var(--row-gap-small);
-}
-*, ::before, ::after{
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -499,7 +51,8 @@ main {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
-::backdrop{
+
+::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -551,12 +104,13 @@ main {
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
-/*
+}/*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
+
 *,
 ::before,
 ::after {
@@ -565,10 +119,12 @@ main {
   border-style: solid; /* 2 */
   border-color: #e5e7eb; /* 2 */
 }
+
 ::before,
 ::after {
   --tw-content: '';
 }
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -578,6 +134,7 @@ main {
 6. Use the user's configured `sans` font-variation-settings by default.
 7. Disable tap highlights on iOS
 */
+
 html,
 :host {
   line-height: 1.5; /* 1 */
@@ -590,34 +147,42 @@ html,
   font-variation-settings: normal; /* 6 */
   -webkit-tap-highlight-color: transparent; /* 7 */
 }
+
 /*
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
+
 body {
   margin: 0; /* 1 */
   line-height: inherit; /* 2 */
 }
+
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 3. Ensure horizontal rules are visible by default.
 */
+
 hr {
   height: 0; /* 1 */
   color: inherit; /* 2 */
   border-top-width: 1px; /* 3 */
 }
+
 /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
+
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
 }
+
 /*
 Remove the default font size and weight for headings.
 */
+
 h1,
 h2,
 h3,
@@ -627,26 +192,32 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
+
 a {
   color: inherit;
   text-decoration: inherit;
 }
+
 /*
 Add the correct font weight in Edge and Safari.
 */
+
 b,
 strong {
   font-weight: bolder;
 }
+
 /*
 1. Use the user's configured `mono` font-family by default.
 2. Use the user's configured `mono` font-feature-settings by default.
 3. Use the user's configured `mono` font-variation-settings by default.
 4. Correct the odd `em` font sizing in all browsers.
 */
+
 code,
 kbd,
 samp,
@@ -656,15 +227,19 @@ pre {
   font-variation-settings: normal; /* 3 */
   font-size: 1em; /* 4 */
 }
+
 /*
 Add the correct font size in all browsers.
 */
+
 small {
   font-size: 80%;
 }
+
 /*
 Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 */
+
 sub,
 sup {
   font-size: 75%;
@@ -672,27 +247,33 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
+
 /*
 1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
 2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 3. Remove gaps between table borders by default.
 */
+
 table {
   text-indent: 0; /* 1 */
   border-color: inherit; /* 2 */
   border-collapse: collapse; /* 3 */
 }
+
 /*
 1. Change the font styles in all browsers.
 2. Remove the margin in Firefox and Safari.
 3. Remove default padding in all browsers.
 */
+
 button,
 input,
 optgroup,
@@ -709,17 +290,21 @@ textarea {
   margin: 0; /* 2 */
   padding: 0; /* 3 */
 }
+
 /*
 Remove the inheritance of text transform in Edge and Firefox.
 */
+
 button,
 select {
   text-transform: none;
 }
+
 /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Remove default button styles.
 */
+
 button,
 input:where([type='button']),
 input:where([type='reset']),
@@ -728,62 +313,80 @@ input:where([type='submit']) {
   background-color: transparent; /* 2 */
   background-image: none; /* 2 */
 }
+
 /*
 Use the modern Firefox focus style for all focusable elements.
 */
+
 :-moz-focusring {
   outline: auto;
 }
+
 /*
 Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
+
 :-moz-ui-invalid {
   box-shadow: none;
 }
+
 /*
 Add the correct vertical alignment in Chrome and Firefox.
 */
+
 progress {
   vertical-align: baseline;
 }
+
 /*
 Correct the cursor style of increment and decrement buttons in Safari.
 */
+
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
+
 /*
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
+
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
+
 /*
 Remove the inner padding in Chrome and Safari on macOS.
 */
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Change font properties to `inherit` in Safari.
 */
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
+
 /*
 Add the correct display in Chrome and Safari.
 */
+
 summary {
   display: list-item;
 }
+
 /*
 Removes the default spacing and border for appropriate elements.
 */
+
 blockquote,
 dl,
 dd,
@@ -799,13 +402,16 @@ p,
 pre {
   margin: 0;
 }
+
 fieldset {
   margin: 0;
   padding: 0;
 }
+
 legend {
   padding: 0;
 }
+
 ol,
 ul,
 menu {
@@ -813,49 +419,60 @@ menu {
   margin: 0;
   padding: 0;
 }
+
 /*
 Reset default styling for dialogs.
 */
 dialog {
   padding: 0;
 }
+
 /*
 Prevent resizing textareas horizontally by default.
 */
+
 textarea {
   resize: vertical;
 }
+
 /*
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
+
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
+
 input::placeholder,
 textarea::placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
+
 /*
 Set the default cursor for buttons.
 */
+
 button,
 [role="button"] {
   cursor: pointer;
 }
+
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
 :disabled {
   cursor: default;
 }
+
 /*
 1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
 2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
+
 img,
 svg,
 video,
@@ -867,143 +484,381 @@ object {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
+
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
+
 img,
 video {
   max-width: 100%;
   height: auto;
 }
+
 /* Make elements with the HTML hidden attribute stay hidden by default */
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-.m-0{
+.relative {
+  position: relative;
+}
+.top-\[-115\.86px\] {
+  top: -115.86px;
+}
+.top-\[-77\.24px\] {
+  top: -77.24px;
+}
+.z-\[-10\] {
+  z-index: -10;
+}
+.z-\[-1\] {
+  z-index: -1;
+}
+.z-\[1\] {
+  z-index: 1;
+}
+.m-0 {
   margin: 0px;
 }
-.my-2{
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.mb-4{
+.my-4 {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.mb-8{
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-8 {
   margin-bottom: 2rem;
 }
-.inline-block{
+.ml-\[-90px\] {
+  margin-left: -90px;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-\[112px\] {
+  margin-top: 112px;
+}
+.block {
+  display: block;
+}
+.inline-block {
   display: inline-block;
 }
-.flex{
+.flex {
   display: flex;
 }
-.flex-auto{
+.h-\[112px\] {
+  height: 112px;
+}
+.h-auto {
+  height: auto;
+}
+.max-h-10 {
+  max-height: 2.5rem;
+}
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+.max-h-\[60vh\] {
+  max-height: 60vh;
+}
+.max-h-screen {
+  max-height: 100vh;
+}
+.min-h-\[70vh\] {
+  min-height: 70vh;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-\[160px\] {
+  width: 160px;
+}
+.w-full {
+  width: 100%;
+}
+.min-w-\[150px\] {
+  min-width: 150px;
+}
+.max-w-\[40px\] {
+  max-width: 40px;
+}
+.max-w-\[90em\] {
+  max-width: 90em;
+}
+.max-w-full {
+  max-width: 100%;
+}
+.flex-auto {
   flex: 1 1 auto;
 }
-.grow{
+.grow {
   flex-grow: 1;
 }
-.list-none{
+.transform-gpu {
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes fade-slide-left {
+
+  0% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animate-\[0\.5s_ease-in-out_fade-slide-left\] {
+  animation: 0.5s ease-in-out fade-slide-left;
+}
+@keyframes fade-slide-left {
+
+  0% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animate-\[1\.5s_ease-in-out_fade-slide-left\] {
+  animation: 1.5s ease-in-out fade-slide-left;
+}
+@keyframes fade-slide-left {
+
+  0% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translate(28px, 15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animate-\[1s_ease-in-out_fade-slide-left\] {
+  animation: 1s ease-in-out fade-slide-left;
+}
+.list-none {
   list-style-type: none;
 }
-.flex-row{
+.flex-row {
   flex-direction: row;
 }
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
-.items-center{
+.items-center {
   align-items: center;
 }
-.justify-between{
+.justify-between {
   justify-content: space-between;
 }
-.gap-1{
+.gap-1 {
   gap: 0.25rem;
 }
-.gap-2{
+.gap-2 {
   gap: 0.5rem;
 }
-.gap-3{
+.gap-3 {
   gap: 0.75rem;
 }
-.gap-x-2{
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+.gap-x-4 {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
-.text-balance{
+.self-center {
+  align-self: center;
+}
+.text-balance {
   text-wrap: balance;
 }
-.rounded-sm{
+.rounded-sm {
   border-radius: 0.125rem;
 }
-.border{
+.border {
   border-width: 1px;
 }
-.border-neutral-500{
+.border-solid {
+  border-style: solid;
+}
+.border-neutral-500 {
   --tw-border-opacity: 1;
   border-color: rgb(115 115 115 / var(--tw-border-opacity, 1));
 }
-.bg-white{
+.border-primaryDark {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 143 140 / var(--tw-border-opacity, 1));
+}
+.border-transparent {
+  border-color: transparent;
+}
+.bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 24 31 / var(--tw-bg-opacity, 1));
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
-.p-0{
+.bg-left {
+  background-position: left;
+}
+.bg-top {
+  background-position: top;
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.object-top {
+  -o-object-position: top;
+     object-position: top;
+}
+.p-0 {
   padding: 0px;
 }
-.p-2{
+.p-1 {
+  padding: 0.25rem;
+}
+.p-12 {
+  padding: 3rem;
+}
+.p-2 {
   padding: 0.5rem;
 }
-.px-2{
+.px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.py-1{
+.py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.font-sans{
+.pl-\[160px\] {
+  padding-left: 160px;
+}
+.text-center {
+  text-align: center;
+}
+.font-sans {
   font-family: Graphik, sans-serif;
 }
-.text-4xl{
+.text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-6xl{
+.text-6xl {
   font-size: 3.75rem;
   line-height: 1;
 }
-.font-semibold{
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
   font-weight: 600;
 }
-.tracking-tight{
+.tracking-tight {
   letter-spacing: -0.025em;
 }
-.text-current{
+.text-current {
   color: currentColor;
 }
-.text-neutral-300{
+.text-neutral-300 {
   --tw-text-opacity: 1;
   color: rgb(212 212 212 / var(--tw-text-opacity, 1));
 }
-.filter{
+.no-underline {
+  text-decoration-line: none;
+}
+.opacity-\[99\%\] {
+  opacity: 99%;
+}
+.filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-.hover\:bg-neutral-800:hover{
+/* background */
+body{background-image:linear-gradient(45deg,#000,#000 .5%,#008f8c .5%,#008f8c 7.6%,#000 7.6%,#000 8.642857143%,#0fc2c0 8.642857143%,#0fc2c0 15.64285714%,#000 15.64285714%,#000 16.88571429%,#0caba8 16.88571429%,#0caba8 23.84285714%,#000 23.84285714%,#000 25%,transparent 25%),linear-gradient(-45deg,#000,#000 .5%,#008f8c .5%,#008f8c 7.6%,#000 7.6%,#000 8.642857143%,#0fc2c0 8.642857143%,#0fc2c0 15.64285714%,#000 15.64285714%,#000 16.88571429%,#0caba8 16.88571429%,#0caba8 23.84285714%,#000 23.84285714%,#000 25%,transparent 25%),linear-gradient(45deg,transparent 73.85714286%,#000 73.85714286%,#000 75%,transparent 75%),linear-gradient(-45deg,transparent 73.85714286%,#000 73.85714286%,#000 75%,transparent 75%),linear-gradient(45deg,transparent 66.85714286%,#0caba8 66.85714286%,#0caba8 73.85714286%,transparent 73.85714286%),linear-gradient(-45deg,transparent 66.85714286%,#0caba8 66.85714286%,#0caba8 73.85714286%,transparent 73.85714286%),linear-gradient(45deg,transparent 65.71428571%,#000 65.71428571%,#000 66.85714286%,transparent 66.85714286%),linear-gradient(-45deg,transparent 65.71428571%,#000 65.71428571%,#000 66.85714286%,transparent 66.85714286%),linear-gradient(45deg,transparent 58.71428571%,#0fc2c0 58.71428571%,#0fc2c0 65.71428571%,transparent 65.71428571%),linear-gradient(-45deg,transparent 58.71428571%,#0fc2c0 58.71428571%,#0fc2c0 65.71428571%,transparent 65.71428571%),linear-gradient(45deg,transparent 57.57142857%,#000 57.57142857%,#000 58.71428571%,transparent 58.71428571%),linear-gradient(-45deg,transparent 57.57142857%,#000 57.57142857%,#000 58.71428571%,transparent 58.71428571%),linear-gradient(45deg,transparent 50.57142857%,#008f8c 50.57142857%,#008f8c 57.57142857%,transparent 57.57142857%),linear-gradient(-45deg,transparent 50.57142857%,#008f8c 50.57142857%,#008f8c 57.57142857%,transparent 57.57142857%),linear-gradient(45deg,transparent 49.42857143%,#000 49.42857143%,#000 50.57142857%,transparent 50.57142857%),linear-gradient(-45deg,transparent 49.42857143%,#000 49.42857143%,#000 50.57142857%,transparent 50.57142857%),linear-gradient(45deg,transparent 42.42857143%,#015958 42.42857143%,#015958 49.42857143%,transparent 49.42857143%),linear-gradient(-45deg,transparent 42.42857143%,#015958 42.42857143%,#015958 49.42857143%,transparent 49.42857143%),linear-gradient(45deg,transparent 41.28571429%,#000 41.28571429%,#000 42.42857143%,transparent 42.42857143%),linear-gradient(-45deg,transparent 41.28571429%,#000 41.28571429%,#000 42.42857143%,transparent 42.42857143%),linear-gradient(45deg,transparent 34.28571429%,#023535 34.28571429%,#023535 41.28571429%,transparent 41.28571429%),linear-gradient(-45deg,transparent 34.28571429%,#023535 34.28571429%,#023535 41.28571429%,transparent 41.28571429%),linear-gradient(45deg,transparent 33.142857143%,#000 33.142857143%,#000 34.28571429%,transparent 34.28571429%),linear-gradient(-45deg,transparent 33.142857143%,#000 33.142857143%,#000 34.28571429%,transparent 34.28571429%);background-size:100px 100px;background-position:0 0}
+/* 404 */
+.error-404-4 {
+  background-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="159.8" height="89.5" viewBox="0 0 159.8 89.5"%3E%3Cpath fill="%231d2125" d="M60 0L40 11.2V33.6L20 22.4 0 33.6v22.3l60 33.6 39.9-22.3 39.9 22.3 20-11.2V56z"/%3E%3Cpath fill="%23969696" d="M60 5.2l-15.3 8.5L60 22.3l15.3-8.6L60 5.2M20 27.6L4.7 36.2 20 44.7l15.3-8.6L20 27.6M40 38.8l-15.3 8.5L40 55.9l15.3-8.6L40 38.8M79.9 16.4L64.6 25l15.3 8.6L95.1 25l-15.2-8.6M99.9 27.6l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M80 38.9l-15.3 8.5L80 56l15.3-8.6L80 38.9M119.9 38.9l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M60 50l-15.3 8.5L60 67.1l15.3-8.6L60 50M139.8 50l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5"/%3E%3C/svg%3E');
+}
+.error-404-0 {
+  background-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="159.8" height="111.8" viewBox="0 0 159.8 111.8"%3E%3Cpath fill="%231d2125" d="M60 0L0 33.6v22.3l99.9 55.9 59.9-33.5V56z"/%3E%3Cpath fill="%23969696" d="M60 5.2l-15.3 8.5L60 22.3l15.3-8.6L60 5.2M40 16.5L24.7 25 40 33.5 55.3 25 40 16.5M20 27.6L4.7 36.2 20 44.7l15.3-8.6L20 27.6M40 38.8l-15.3 8.5L40 55.9l15.3-8.6L40 38.8M79.9 16.4L64.6 25l15.3 8.6L95.1 25l-15.2-8.6M99.9 27.6l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M119.9 38.9l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M60 50l-15.3 8.5L60 67.1l15.3-8.6L60 50M80 61.2l-15.3 8.5L80 78.3l15.3-8.6L80 61.2M139.8 50l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M119.8 61.2l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5M99.9 72.4l-15.3 8.5 15.3 8.6 15.3-8.6-15.3-8.5"/%3E%3C/svg%3E');
+}
+.hover\:border-black\/10:hover {
+  border-color: rgb(0 0 0 / 0.1);
+}
+.hover\:bg-neutral-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1));
 }
-.hover\:text-white:hover{
+.hover\:bg-white\/10:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}
+.hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
-@media (prefers-color-scheme: dark){
-  .dark\:bg-primary{
+@media (prefers-color-scheme: dark) {
+
+  .dark\:bg-primary {
     --tw-bg-opacity: 1;
     background-color: rgb(20 24 31 / var(--tw-bg-opacity, 1));
   }
-  .dark\:text-white{
+
+  .dark\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }

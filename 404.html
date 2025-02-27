@@ -28,16 +28,16 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
 </head>
-  <body>
+  <body class="min-h-screen w-full m-0 p-0 bg-background">
     <nav class="bg-white dark:bg-primary text-current dark:text-white flex flex-wrap mb-4 gap-2 p-2 items-center justify-between">
-      <a href="/" class="navbar-home flex">
-          <img src="/favicon.svg" alt="">
-        <strong>TED Vortex</strong>
+      <a href="/" class="min-w-[150px] p-1 flex border border-transparent bg-transparent no-underline hover:border-black/10 hover:bg-white/10">
+          <img class="max-h-10 max-w-[40px] mr-2" src="/favicon.svg" alt="">
+        <strong class="font-bold self-center">TED Vortex</strong>
       </a>
 
       <div class="flex flex-auto"></div>
 
-      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-2 font-semibold">        <li>
+      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-4 font-semibold">        <li>
           <a href="/pages/about/">
             About me
           </a>
@@ -71,10 +71,12 @@
       </ul>
     </nav>
 
-    <main class="">
-      <div class="error-banner">
-  <div class="error-404"></div>
-<h1>Content not found.</h1>
+    <main class=" opacity-[99%] p-12 max-w-[90em] min-h-[70vh] mx-auto my-0 bg-background">
+      <div class="z-[1] relative text-center transform-gpu">
+  <div class="error-404-4 inline-block relative bg-no-repeat w-[160px] h-[112px] ml-[-90px] pl-[160px] mt-[112px] mb-8 bg-top bg-left animate-[0.5s_ease-in-out_fade-slide-left]"></div>
+  <div class="error-404-0 inline-block relative bg-no-repeat w-[160px] h-[112px] ml-[-90px] top-[-77.24px] z-[-1] animate-[1s_ease-in-out_fade-slide-left]"></div>
+  <div class="error-404-4 inline-block relative bg-no-repeat w-[160px] h-[112px] ml-[-90px] top-[-115.86px] z-[-10] animate-[1.5s_ease-in-out_fade-slide-left]"></div>
+<h2 id="content-not-found." tabindex="-1"><a href="#content-not-found." class="header-anchor">Content not found.</a></h2>
 <p>Go <a href="/">home</a>.</p>
 </div>
 

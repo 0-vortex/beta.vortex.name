@@ -29,16 +29,16 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
 </head>
-  <body>
+  <body class="min-h-screen w-full m-0 p-0 bg-background">
     <nav class="bg-white dark:bg-primary text-current dark:text-white flex flex-wrap mb-4 gap-2 p-2 items-center justify-between">
-      <a href="/" class="navbar-home flex">
-          <img src="/favicon.svg" alt="">
-        <strong>TED Vortex</strong>
+      <a href="/" class="min-w-[150px] p-1 flex border border-transparent bg-transparent no-underline hover:border-black/10 hover:bg-white/10">
+          <img class="max-h-10 max-w-[40px] mr-2" src="/favicon.svg" alt="">
+        <strong class="font-bold self-center">TED Vortex</strong>
       </a>
 
       <div class="flex flex-auto"></div>
 
-      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-2 font-semibold">        <li>
+      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-4 font-semibold">        <li>
           <a href="/pages/about/" aria-current="page">
             About me
           </a>
@@ -72,7 +72,7 @@
       </ul>
     </nav>
 
-    <main class="body-tag">
+    <main class="body-tag opacity-[99%] p-12 max-w-[90em] min-h-[70vh] mx-auto my-0 bg-background">
       <article class="post" data-pagefind-body="">
   <header class="post-header">
     <h1 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">About me</h1>
@@ -87,7 +87,7 @@
 <p>Proficient in GitHub Actions, CloudFlare Workers, TypeScript, and React. Skilled with De/Node, Docker, and PostGres. I prioritize efficiency and practicality in my work. No fluff, just results.</p>
 <p>In my day to day activities I employ various philosophical concepts, some of my favourite and most useful being: DRY, KISS, Occam's Razor and Zeno's paradoxes.</p>
 <p>Currently learning LLMs and Decentralized Scaling. 🚧</p>
-<img class="splash-screen max" src="/uploads/portrait-mecha-girl.webp" alt="">
+<img class="block w-full h-auto max-w-full max-h-screen object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/portrait-mecha-girl.webp" alt="">
 
   </div>
 </article>
