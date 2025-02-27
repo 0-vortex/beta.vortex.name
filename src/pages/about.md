@@ -27,4 +27,4 @@ In my day to day activities I employ various philosophical concepts, some of my 
 
 Currently learning LLMs and Decentralized Scaling. 🚧
 
-<img class="splash-screen max" src="/uploads/portrait-mecha-girl.webp" alt=""/>
+<img class="block w-full h-auto max-w-full max-h-screen object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/portrait-mecha-girl.webp" alt=""/>

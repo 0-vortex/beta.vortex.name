@@ -18,18 +18,18 @@
     <script src="/js/main.js" type="module"></script>
     {{ it.extra_head?.join("\n") }}
   </head>
-  <body>
+  <body class="min-h-screen w-full m-0 p-0 bg-background">
     <nav class="bg-white dark:bg-primary text-current dark:text-white flex flex-wrap mb-4 gap-2 p-2 items-center justify-between">
-      <a href="/" class="navbar-home flex">
+      <a href="/" class="min-w-[150px] p-1 flex border border-transparent bg-transparent no-underline hover:border-black/10 hover:bg-white/10">
         {{ if it.logo }}
-          <img src="/{{ it.logo }}" alt=""/>
+          <img class="max-h-10 max-w-[40px] mr-2" src="/{{ it.logo }}" alt=""/>
         {{ /if }}
-        <strong>{{ metas.site }}</strong>
+        <strong class="font-bold self-center">{{ metas.site }}</strong>
       </a>
 
       <div class="flex flex-auto"></div>
 
-      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-2 font-semibold">
+      <ul class="flex flex-wrap p-0 m-0 list-none items-center gap-x-4 font-semibold">
       {{- for entry of search.pages("menu.visible=true", "menu.order") }}
         <li>
           <a href="{{ entry.url }}"{{ if entry.url == url }} aria-current="page"{{ /if }}>
@@ -63,7 +63,7 @@
       </ul>
     </nav>
 
-    <main class="{{ it.bodyClass }}">
+    <main class="{{ it.bodyClass }} opacity-[99%] p-12 max-w-[90em] min-h-[70vh] mx-auto my-0 bg-background">
       {{ content }}
     </main>
 

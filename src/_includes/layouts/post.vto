@@ -50,18 +50,18 @@ bodyClass: body-post
   {{ /if }}
 
   {{ if comments?.src || comments?.bluesky }}
-  <aside class="comments-section">
-    <header class="comments-header">
-      <h2>{{ i18n.comments.title }}</h2>
+  <aside class="mt-20">
+    <header class="mb-2">
+      <h2 class="font-title tracking-[var(--font-title-spacing)] m-0 text-[var(--color-base)]">{{ i18n.comments.title }}</h2>
       {{ if comments.bluesky && comments.src }}
-      <p>{{ i18n.comments.description_all.replace(":src:", comments.src).replace(":bluesky:", comments.bluesky) }}</p>
+      <p class="font-ui text-[var(--color-dim)] my-2">{{ i18n.comments.description_all.replace(":src:", comments.src).replace(":bluesky:", comments.bluesky) }}</p>
       {{ else if comments.src }}
-      <p>{{ i18n.comments.description.replace(":src:", comments.src) }}</p>
+      <p class="font-ui text-[var(--color-dim)] my-2">{{ i18n.comments.description.replace(":src:", comments.src) }}</p>
       {{ else }}
-      <p>{{ i18n.comments.description_bluesky.replace(":bluesky:", comments.bluesky) }}</p>
+      <p class="font-ui text-[var(--color-dim)] my-2">{{ i18n.comments.description_bluesky.replace(":bluesky:", comments.bluesky) }}</p>
       {{ /if }}
     </header>
-    <mastodon-comments bluesky="{{ it.comments.bluesky}}" mastodon="{{ it.comments.src }}" cache="{{ it.comments.cache ?? 60 }}" class="comments">
+    <mastodon-comments bluesky="{{ it.comments.bluesky}}" mastodon="{{ it.comments.src }}" cache="{{ it.comments.cache ?? 60 }}" class="block p-8 mt-8 bg-[var(--color-highlight)] rounded-[var(--border-radius)] border border-solid border-[var(--color-line)] text-[var(--color-dim)] font-small sm:mx-0 max-sm:mx-[-7.5vw] max-sm:rounded-none max-sm:border-x-0 max-sm:p-[7.5vw]">
       {{ i18n.comments.empty }}
     </mastodon-comments>
   </aside>

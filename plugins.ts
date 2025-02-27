@@ -59,9 +59,31 @@ export default function (userOptions?: Options) {
           theme: {
             extend: {
               colors: {
+                background: '#14181f',
                 primary: '#14181f',
                 secondary: '#023535',
+                primaryDark: '#008f8c',
+                secondaryDark: '#0fc2c0',
               },
+              keyframes: {
+                'fade-slide-left': {
+                  '0%': {
+                    opacity: 0,
+                    transform: 'translate(28px, 15px)'
+                  },
+                  '50%': {
+                    opacity: 0,
+                    transform: 'translate(28px, 15px)'
+                  },
+                  '100%': {
+                    opacity: 1,
+                    transform: 'translate(0, 0)'
+                  }
+                }
+              },
+              animation: {
+                'fade-slide-left': 'fade-slide-left 0.5s ease-in-out'
+              }
             },
             fontFamily: {
               sans: ["Graphik", "sans-serif"],

@@ -5,17 +5,17 @@ title: Home
 ---
 
 <header class="mb-8">
-  <img class="splash-screen" src="/uploads/splash-ethereal-spaces.png" alt=""/>
+  <img class="block w-full h-auto max-w-full max-h-[300px] object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/splash-ethereal-spaces.png" alt=""/>
 
-  <h1 class="m-0 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ home.welcome }}</h1>
+  <h1 class="my-4 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ home.welcome }}</h1>
 
   <div class="search" id="search"></div>
 </header>
 
-<section class="postList">
+<section class="p-0">
   {{ for post of search.pages("type=post", "date=desc", 3) }}
-  <article class="post">
-    <header class="post-header">
+  <article class="mt-4">
+    <header class="mb-2">
       <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
         <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
           {{ post.title || post.url }}
@@ -31,7 +31,7 @@ title: Home
     </header>
 
     <div class="post-excerpt body">
-      {{ post.excerpt |> md }}
+      {{ post.excerpt |> substring(0,420) |> md }}
     </div>
 
     <a href="{{ post.url }}" class="inline-block">
