@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.3.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.2.0...v1.3.0) (2025-02-27)
+
+### 🍕 Features
+
+* full remove css in favour of tailwind classes ([5313d45](https://github.com/0-vortex/beta.vortex.name/commit/5313d45b930741916796528c9edeb8c7e3c96e71))
+
 ## [1.2.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.1.2...v1.2.0) (2025-02-25)
 
 ### 🍕 Features
