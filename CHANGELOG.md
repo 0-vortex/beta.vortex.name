@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.4.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.3.0...v1.4.0) (2025-02-27)
+
+### 🍕 Features
+
+* correct excerpts and add more plugins ([4c98867](https://github.com/0-vortex/beta.vortex.name/commit/4c988676beda7fbad2bba3e421f8d5bd22e614e1))
+
 ## [1.3.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.2.0...v1.3.0) (2025-02-27)
 
 ### 🍕 Features
