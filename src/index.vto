@@ -31,7 +31,7 @@ title: Home
     </header>
 
     <div class="post-excerpt body">
-      {{ post.excerpt |> substring(0,420) |> md }}
+      {{ post.excerpt |> md }}
     </div>
 
     <a href="{{ post.url }}" class="inline-block">

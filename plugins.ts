@@ -22,6 +22,9 @@ import jsonLd from "lume/plugins/json_ld.ts";
 import favicon from "lume/plugins/favicon.ts";
 import sri from "lume/plugins/sri.ts";
 import sourceMaps from "lume/plugins/source_maps.ts";
+import picture from "lume/plugins/picture.ts";
+import transformImages from "lume/plugins/transform_images.ts";
+import checkUrls from "lume/plugins/check_urls.ts";
 
 import "lume/types.ts";
 
@@ -112,6 +115,9 @@ export default function (userOptions?: Options) {
       .use(favicon())
       .use(sri())
       .use(sourceMaps({ inline: false, sourceContent: false }))
+      .use(picture())
+      .use(transformImages())
+      .use(checkUrls())
       .copy("fonts")
       .copy("js")
       .copy("favicon.svg")

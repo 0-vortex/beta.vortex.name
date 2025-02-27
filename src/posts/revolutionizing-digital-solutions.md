@@ -19,6 +19,8 @@ This simplifies the design process and user experience to a minimum required, ke
 
 While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.
 
+<!-- more -->
+
 ## End-to-End Encryption
 
 We want to build ASAP solutions, that is software As Secure As Possible.

@@ -5,7 +5,7 @@
   "nodeModulesDir": "auto",
   "lock": {
     "path": "./deno.lock",
-    "frozen": true
+    "frozen": false
   },
   "lint": {
     "include": ["./src", "./test", "./prisma"],

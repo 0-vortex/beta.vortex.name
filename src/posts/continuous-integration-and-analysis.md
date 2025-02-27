@@ -21,6 +21,8 @@ To summarise the review factors for this document:
 - minimal developer downtime and configuration setback
 - fast build times (RAD)
 
+<!-- more -->
+
 ## The list covers services that can be broken down into "type" categories:
 
 1. **[Continuous Integration](#continuous-integration)**
