@@ -16,7 +16,6 @@ import { merge } from "lume/core/utils/object.ts";
 import toc from "https://deno.land/x/lume_markdown_plugins@v0.8.0/toc.ts";
 import image from "https://deno.land/x/lume_markdown_plugins@v0.8.0/image.ts";
 import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.8.0/footnotes.ts";
-import { alert } from "npm:@mdit/plugin-alert@0.14.0";
 import inline from "lume/plugins/inline.ts";
 import jsonLd from "lume/plugins/json_ld.ts";
 import favicon from "lume/plugins/favicon.ts";
@@ -26,6 +25,9 @@ import picture from "lume/plugins/picture.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import checkUrls from "lume/plugins/check_urls.ts";
 import googleFonts from "lume/plugins/google_fonts.ts";
+import icons from "lume/plugins/icons.ts";
+// import { alert } from "npm:@mdit/plugin-alert@0.14.0";
+// import { CSS as GFM_CSS } from "jsr:@deno/gfm";
 
 import "lume/types.ts";
 
@@ -284,6 +286,16 @@ export default function (userOptions?: Options) {
           "Roboto Slab": "https://fonts.google.com/share?selection.family=Roboto+Slab:wght@400",
         }
       }))
+      .use(icons({
+        folder: "/icons",
+        catalogs: [{
+          id: "lucide",
+          src: "https://cdn.jsdelivr.net/npm/lucide-static@0.473.0/icons/{name}.svg"
+        }, {
+          id: "simpleicons",
+          src: "https://cdn.jsdelivr.net/npm/simple-icons@14.7.0/icons/{name}.svg"
+        }]
+      }))
       .copy("fonts")
       .copy("js")
       .copy("favicon.svg")
@@ -291,14 +303,18 @@ export default function (userOptions?: Options) {
       .mergeKey("extra_head", "stringArray")
       .preprocess([".md"], (pages) => {
         for (const page of pages) {
-          page.data.excerpt ??= (page.data.content as string).split(
+          page.data['excerpt'] ??= (page.data.content as string).split(
             /<!--\s*more\s*-->/i,
           )[0];
         }
       });
 
-    // Alert plugin
-    site.hooks.addMarkdownItPlugin(alert);
+    // site.addEventListener("afterBuild", () => {
+    //   Deno.writeTextFileSync(site.dest("gfm.css"), GFM_CSS);
+    // });
+    //
+    // // Alert plugin
+    // site.hooks['addMarkdownItPlugin'](alert, { deep: true });
 
     // Mastodon comment system
     site.remoteFile(

@@ -5,7 +5,7 @@
   "nodeModulesDir": "auto",
   "lock": {
     "path": "./deno.lock",
-    "frozen": false
+    "frozen": true
   },
   "lint": {
     "include": ["./src", "./test"],
@@ -37,6 +37,7 @@
     ]
   },
   "imports": {
+    "@deno/gfm": "jsr:@deno/gfm@^0.10.0",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "@tmcb/conventional-commit": "npm:@tmcb/conventional-commit@^1.0.0",
     "lume/": "https://deno.land/x/lume@v2.5.2/",
