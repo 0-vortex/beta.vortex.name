@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.5.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.4.0...v1.5.0) (2025-03-02)
+
+### 🍕 Features
+
+* add brutalist theme improvements and popular articles container ([ee090e6](https://github.com/0-vortex/beta.vortex.name/commit/ee090e6cfdc781ba435e1c111de9a382af5488b9))
+
 ## [1.4.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.3.0...v1.4.0) (2025-02-27)
 
 ### 🍕 Features
