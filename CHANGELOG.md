@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.7.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.6.0...v1.7.0) (2025-03-02)
+
+### 🍕 Features
+
+* add footer mock and improve backgrounds ([b09a335](https://github.com/0-vortex/beta.vortex.name/commit/b09a3352701b0b8aa44e4e904a5f4503e7c0ebb2))
+
 ## [1.6.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.5.0...v1.6.0) (2025-03-02)
 
 ### 🍕 Features
