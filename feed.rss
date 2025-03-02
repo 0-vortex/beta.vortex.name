@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:webfeeds="http://webfeeds.org/rss/1.0" version="2.0">
   <channel>
-    <title>TED Vortex</title>
+    <title>VORTEX</title>
     <link>http://localhost/</link>
     <atom:link href="http://localhost/feed.rss" rel="self" type="application/rss+xml"/>
     <description>
       AI psychologist by day, samurai tooling in general by night. I'm just here to make sure your machines don't develop a personality disorder.
     </description>
-    <lastBuildDate>Thu, 27 Feb 2025 23:36:01 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 02 Mar 2025 00:19:25 GMT</lastBuildDate>
     <language>en</language>
     <generator>Lume v2.5.2</generator>
     <item>
@@ -20,8 +20,8 @@
         <![CDATA[<h2 id="cross-platform-availability" tabindex="-1"><a href="http://localhost/revolutionizing-digital-solutions/#cross-platform-availability" class="header-anchor">Cross Platform Availability</a></h2>
 <p>Solutions should have native performance anywhere and everywhere.
 This simplifies the design process and user experience to a minimum required, keeping our ideas close to the users at all times.</p>
-<p>While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.</p>
 <!-- more -->
+<p>While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.</p>
 <h2 id="end-to-end-encryption" tabindex="-1"><a href="http://localhost/revolutionizing-digital-solutions/#end-to-end-encryption" class="header-anchor">End-to-End Encryption</a></h2>
 <p>We want to build ASAP solutions, that is software As Secure As Possible.
 End-to-end encryption is a minimal overhead which becomes automated when implemented in every step of our workflow.</p>
@@ -46,8 +46,8 @@ End-to-end encryption is a minimal overhead which becomes automated when impleme
       <content:encoded>
         <![CDATA[<h2 id="hl7-fhir" tabindex="-1"><a href="http://localhost/posts/pine-healthcare-whitepaper/#hl7-fhir" class="header-anchor">HL7 FHIR</a></h2>
 <p>Health Level Seven or HL7 refers to a set of international standards for transfer of clinical and administrative data between software applications used by various healthcare providers. These standards focus on the application layer, which is &quot;layer 7&quot; in the OSI model. The HL7 standards are produced by Health Level Seven International, an international standards organization, and are adopted by other standards issuing bodies such as American National Standards Institute and International Organization for Standardization.</p>
-<p>Hospitals and other healthcare provider organizations typically have many different computer systems used for everything from billing records to patient tracking. All of these systems should communicate with each other (or &quot;interface&quot;) when they receive new information, or when they wish to retrieve information, but not all do so.</p>
 <!-- more -->
+<p>Hospitals and other healthcare provider organizations typically have many different computer systems used for everything from billing records to patient tracking. All of these systems should communicate with each other (or &quot;interface&quot;) when they receive new information, or when they wish to retrieve information, but not all do so.</p>
 <p>HL7 International specifies a number of flexible standards, guidelines, and methodologies by which various healthcare systems can communicate with each other. Such guidelines or data standards are a set of rules that allow information to be shared and processed in a uniform and consistent manner. These data standards are meant to allow healthcare organizations to easily share clinical information. Theoretically, this ability to exchange information should help to minimize the tendency for medical care to be geographically isolated and highly variable.</p>
 <p>You can read more on:</p>
 <ul>
@@ -118,6 +118,7 @@ End-to-end encryption is a minimal overhead which becomes automated when impleme
       <content:encoded>
         <![CDATA[<p>Initial idea is based on the list available at https://github.com/ligurio/Continuous-Integration-services/blob/master/continuous-integration-services-list.md.</p>
 <p>It contains only services that provide a sensible amount of features for open source projects or non-profit organisations. I've also added several tools I used or tested with a minimal up and running configuration.</p>
+<!-- more -->
 <p>To summarise the review factors for this document:</p>
 <ul>
 <li>open source tools</li>
@@ -125,7 +126,6 @@ End-to-end encryption is a minimal overhead which becomes automated when impleme
 <li>minimal developer downtime and configuration setback</li>
 <li>fast build times (RAD)</li>
 </ul>
-<!-- more -->
 <h2 id="the-list-covers-services-that-can-be-broken-down-into-%22type%22-categories%3A" tabindex="-1"><a href="http://localhost/posts/continuous-integration-and-analysis/#the-list-covers-services-that-can-be-broken-down-into-%22type%22-categories%3A" class="header-anchor">The list covers services that can be broken down into &quot;type&quot; categories:</a></h2>
 <ol>
 <li><strong><a href="http://localhost/posts/continuous-integration-and-analysis/#continuous-integration">Continuous Integration</a></strong></li>
