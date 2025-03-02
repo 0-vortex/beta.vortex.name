@@ -29,7 +29,7 @@
     </script>
 
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/gfm.css">
+<!--    <link rel="stylesheet" href="/gfm.css">-->
     <link rel="alternate" href="/feed.rss" type="application/atom+xml" title="{{ metas.site }}">
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ metas.site }}">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
@@ -38,14 +38,14 @@
     {{ it.extra_head?.join("\n") }}
 </head>
 <body class="min-h-screen max-w-screen m-0 p-0 bg-[length:100px_100px] bg-[position:0_0] bg-background dark:bg-backgroundDark text-black dark:text-white">
-<div class="fixed z-10 left-0 top-0 h-[76px] w-screen bg-background dark:bg-backgroundDark border-b border-inset dark:border-insetDark">
-    <div class="container mx-auto px-4 py-3 relative h-15 mobile:h-8 flex justify-between items-center select-none">
+<div id="header" class="fixed z-10 left-0 top-0 h-[76px] w-screen bg-background dark:bg-backgroundDark border-b border-inset dark:border-insetDark">
+    <div class="container mx-auto px-4 py-3 relative h-15 flex justify-between items-center select-none">
         <a href="/"
            class="inline-block text-2xl sm:text-3xl md:text-4xl font-bold font-sans py-2 flex">
             {{ if it.logo }}
                 <img width="40" height="40" class="max-h-10 max-w-[40px] mr-2" src="/{{ it.logo }}" alt=""/>
             {{ /if }}
-            <strong class="font-bold self-center">{{ metas.site }}</strong>
+            <strong class="font-bold self-center opacity-75 hover:opacity-[99]">{{ metas.site }}</strong>
         </a>
 
         <div class="flex lead-xxsmall 2xl:lead-xxsmall items-center leading-5 gap-8 xl:gap-8 h-full px-2">
@@ -82,9 +82,92 @@
     </div>
 </div>
 
-<main class="{{ it.bodyClass }} container relative z-0 opacity-[99%] p-6 md:p-12 mt-24 mx-auto my-0 border border-inset dark:border-insetDark bg-background dark:bg-backgroundDark">
+<main id="main" class="{{ it.bodyClass }} container relative z-0 opacity-[99%] p-6 md:p-12 mt-24 mx-auto my-0 border border-inset dark:border-insetDark bg-background dark:bg-backgroundDark">
     {{ content }}
 </main>
+
+<footer id="footer" class="mt-6 bg-background dark:bg-backgroundDark border-t border-inset dark:border-insetDark font-mono text-md">
+    <section class="py-24 lg:pt-20 lg:pb-10">
+        <div class="container mx-auto relative z-10">
+            <div class="gap-5 gap-x-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7">
+                <div class="col-span-2 md:col-span-3 lg:col-span-3 mb-12 lg:mb-0">
+                    <span class="h-8 px-5 inline-flex items-center bg-gradient-to-r leading-none lead-xsmall mb-0 lg:mb-5 inline-block">
+                        //&nbsp;<!-- -->Stay in touch?
+                    </span>
+                    <div class="flex items-center gap-2 mt-4">
+                        <div class="inline-block">
+                            <label id="email-label" for="email" class=" block font-mono text-form-label h-7"></label>
+                            <input type="email" id="email" class="w-full bg-white dark:bg-black border-black dark:border-white border-2 border-b-4 placeholder-shown:border-b-2 lead-xsmall normal-case focus:ring-0 focus:border-black dark:focus:border-white placeholder:text-black dark:placeholder:text-white placeholder:font-mono placeholder:font-normal placeholder:uppercase disabled:cursor-not-allowed disabled:border-opacity-50 disabled:placeholder:text-opacity-50 disabled:text-opacity-50 dark:disabled:border-opacity-50 dark:disabled:placeholder:text-opacity-50 dark:disabled:text-opacity-50 h-10 placeholder:text-sm py-0 px-2" required="" placeholder="Your Email Address" value="" aria-invalid="false" aria-describedby="email-error">
+                            <div id="email-error" class=" block text-form-error text-validation-fail h-7 mt-2 "></div>
+                        </div>
+                        <span class="-mt-2">
+                            <div class="h-14 inline-block group relative !h-10">
+                                <div class="absolute inset-0 bg-inset dark:bg-insetDark text-sm"></div>
+                                <button id="getupdates" class="h-full w-full px-6 inline-flex justify-center items-center lead-xxsmall font-mono uppercase bg-primary dark:bg-secondaryDark text-white dark:text-black relative transition-transform duration-100 ease-in-out group-active:-translate-x-0.5 group-active:-translate-y-0.5 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:group-active:translate-x-0 disabled:group-active:translate-y-0 disabled:group-hover:translate-x-0 disabled:group-hover:translate-y-0 disabled:opacity-50 text-sm">Get Updates</button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-start-4 col-start-auto">
+                    <div class="font-bold opacity-75">Get Started</div>
+                </div>
+
+                <div class="lg:col-start-5 col-start-auto">
+                    <div class="font-bold opacity-75">Social links</div>
+                    <div class="lead-xxsmall my-10">
+                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="https://github.com/0-vortex/beta.vortex.name" target="_blank">
+                            <span class="whitespace-nowrap">Github</span>
+                            <img class="dark:invert" width="16" height="16" src="{{ "square-arrow-out-up-right" |> icon("lucide") }}" alt=""/>
+                        </a>
+                    </div>
+                    <div class="lead-xxsmall my-10">
+                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="https://discord.gg/bsEurjr" target="_blank">
+                            <span class="whitespace-nowrap">Discord</span>
+                            <img class="dark:invert" width="16" height="16" src="{{ "square-arrow-out-up-right" |> icon("lucide") }}" alt=""/>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-start-6 col-start-auto">
+                    <div class="font-bold opacity-75">Projects</div>
+                    {{- for entry of it.projects }}
+                    <div class="lead-xxsmall my-10">
+                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }}>
+                            <span class="whitespace-nowrap">{{ entry.name }}</span>
+                            <img class="dark:invert" width="16" height="16" src="{{ "square-arrow-out-up-right" |> icon("lucide") }}" alt=""/>
+                        </a>
+                    </div>
+                    {{ /for }}
+                </div>
+
+                <div class="lg:col-start-7 col-start-auto">
+                    <div class="font-bold opacity-75">Pages</div>
+                    {{- for entry of search.pages("menu.visible=true", "menu.order") }}
+                    <div class="lead-xxsmall my-10">
+                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }}>
+                            <span class="whitespace-nowrap">{{ entry.menu.title || entry.title }}</span>
+                        </a>
+                    </div>
+                    {{ /for }}
+                </div>
+
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="/" class="inline-block text-2xl sm:text-3xl md:text-4xl font-bold font-sans flex">
+                        {{ if it.logo }}
+                        <img width="40" height="40" class="max-h-10 max-w-[40px] mr-2" src="/{{ it.logo }}" alt=""/>
+                        {{ /if }}
+                        <strong class="font-bold self-center opacity-75 hover:opacity-[99]">{{ metas.site }}</strong>
+                    </a>
+                </div>
+                <div class="lg:col-start-4 col-span-3 opacity-75 leading-10 self-end font-mono font-bold">
+                    <span class="pr-6">© 2025 Teodor-Eugen Duțulescu</span>
+                    <span>All rights reserved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
 
 <!-- Current page: {{ url }} -->
 </body>

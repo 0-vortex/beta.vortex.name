@@ -12,6 +12,13 @@ logo: favicon.svg
 
 menu_links: []
 extra_head: []
+projects:
+  - name: dotfiles
+    url: https://github.com/0-vortex/dotfiles
+  - name: tmcb-release
+    url: https://github.com/TMCB-SPACE/release
+  - name: lastfm-shields
+    url: https://github.com/0-vortex/cf-workers-lastfm-shields
 
 # Metas plugin https://lume.land/plugins/metas/#description
 metas:
