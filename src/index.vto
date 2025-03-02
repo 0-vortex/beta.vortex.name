@@ -3,44 +3,62 @@ layout: layouts/base.vto
 bodyClass: body-home
 title: Home
 ---
-
 <header class="mb-8">
-  <img class="block w-full h-auto max-w-full max-h-[300px] object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/splash-ethereal-spaces.png" alt=""/>
-
-  <h1 class="my-4 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ home.welcome }}</h1>
-
-  <div class="search" id="search"></div>
-</header>
-
-<section class="p-0">
-  {{ for post of search.pages("type=post", "date=desc", 3) }}
-  <article class="mt-4">
-    <header class="mb-2">
-      <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
-        <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
-          {{ post.title || post.url }}
-        </a>
-      </h2>
-
-      {{ include "templates/post-details.vto" {
-        date: post.date,
-        tags: post.tags,
-        author: post.author,
-        readingInfo: post.readingInfo
-        } }}
-    </header>
-
-    <div class="post-excerpt body">
-      {{ post.excerpt |> md }}
+    <div class=hidden translate-x-2 translate-y-2">
+        <div class="absolute inset-0 bg-secondary dark:bg-secondaryDark -z-10"></div>
+        <img class="-translate-x-2 -translate-y-2 block w-full h-auto max-w-full max-h-[300px] object-cover object-top mb-8 border border-solid border-primaryDark"
+             src="/uploads/splash-ethereal-spaces.png" alt=""/>
     </div>
 
-    <a href="{{ post.url }}" class="inline-block">
-      {{ i18n.nav.continue_reading }}
-    </a>
-  </article>
-{{ /for }}
-</section>
+    <div class="font-extrabold text-4xl md:text-6xl [text-wrap:balance] bg-clip-text">
+        <span class="inline-flex">{{ home.welcome }}</span>
+        <span class="text-primaryDark dark:text-insetDark inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
+            <ul class="block animate-text-slide-4 text-left leading-tight [&_li]:block">
+                {{ for attr of home.welcome_slider }}
+                <li>{{ attr }}</li>
+                {{ /for }}
+                <li aria-hidden="true">{{ home.welcome_slider[0] }}</li>
+            </ul>
+        </span>
+    </div>
 
-<hr>
+    <div class="search hidden" id="search"></div>
+</header>
+
+<section class="p-0 relative">
+    <h2 class="text-6xl font-sans font-bold">Popular articles</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8 mb-12 mt-10 pb-12 border-dashed border-b border-inset dark:border-insetDark">
+        {{ for post of search.pages("type=post", "date=desc", 3) }}
+        <a class="block group relative mb-8 h-full cursor-pointer" href="{{ post.url }}" title="{{ post.title }}">
+            <div class="absolute inset-0 bg-inset dark:bg-insetDark -z-10"></div>
+            <div class=" border border-inset dark:border-insetDark p-6 bg-background dark:bg-backgroundDark h-full transition-transform duration-100 ease-in-out group-active:-translate-x-2 group-active:-translate-y-2 group-hover:-translate-x-2 group-hover:-translate-y-2 flex flex-col ">
+                <div class="flex-shrink-0 mb-4">
+                    <img class="w-full aspect-square object-cover" src="/uploads/portrait-snowy-gates.png" alt=""/>
+                </div>
+                <div class="flex flex-col justify-between flex-grow">
+                    <div class="mb-4 gap-2">
+                        {{ for tag of post.tags }}
+                            {{ set page = search.page(`type=tag tag="${tag}"`) }}
+
+                            {{ if page }}
+                            <div class="inline-block mr-1 border border-black dark:border-white rounded px-2 py-1 text-sm w-fit font-mono uppercase">{{ tag }}</div>
+                            {{ /if }}
+                        {{ /for }}
+                    </div>
+
+                    <h3 class="text-2xl font-medium mb-2 line-clamp-2">{{ post.title }}</h3>
+
+                    <div class="text-base text-gray-700 dark:text-gray-300 line-clamp-4">{{ post.excerpt |> md }}</div>
+
+                    <time class="text-sm font-mono uppercase" datetime="{{ post.date |> date('DATETIME') }}">
+                        {{ post.date |> date('HUMAN_DATE') }}
+                    </time>
+                </div>
+            </div>
+        </a>
+        {{ /for }}
+    </div>
+</section>
 
 <p>{{ i18n.nav.archive }}</p>

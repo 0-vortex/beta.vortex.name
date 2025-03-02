@@ -8,7 +8,7 @@
     "frozen": false
   },
   "lint": {
-    "include": ["./src", "./test", "./prisma"],
+    "include": ["./src", "./test"],
     "rules": {
       "tags": ["recommended"],
       "include": ["ban-untagged-todo"],
@@ -22,7 +22,8 @@
     "semiColons": false,
     "singleQuote": true,
     "proseWrap": "preserve",
-    "include": ["./src", "./test"]
+    "include": ["./src", "./test"],
+    "exclude": ["./src/styles.css"]
   },
   "compilerOptions": {
     "noFallthroughCasesInSwitch": true,

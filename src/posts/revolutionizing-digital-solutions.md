@@ -17,9 +17,9 @@ comments: {}
 Solutions should have native performance anywhere and everywhere.
 This simplifies the design process and user experience to a minimum required, keeping our ideas close to the users at all times.
 
-While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.
-
 <!-- more -->
+
+While our solutions are not IoT centric there is a great benefit for having services flexible across a wide variety of devices.
 
 ## End-to-End Encryption
 

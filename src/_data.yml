@@ -1,7 +1,12 @@
 lang: en
 
 home:
-  welcome: WE ARE VORTEX
+  welcome: We Are
+  welcome_slider:
+    - Cryptographic Security
+    - Assisted Intelligence
+    - System Engineers
+    - Tiamatu Vortex
 
 logo: favicon.svg
 
@@ -10,7 +15,7 @@ extra_head: []
 
 # Metas plugin https://lume.land/plugins/metas/#description
 metas:
-  site: TED Vortex
+  site: VORTEX
   description: >-
     AI psychologist by day, samurai tooling in general by night. I'm just here
     to make sure your machines don't develop a personality disorder.

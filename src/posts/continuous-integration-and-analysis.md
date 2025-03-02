@@ -14,14 +14,14 @@ Initial idea is based on the list available at https://github.com/ligurio/Contin
 
 It contains only services that provide a sensible amount of features for open source projects or non-profit organisations. I've also added several tools I used or tested with a minimal up and running configuration.
 
+<!-- more -->
+
 To summarise the review factors for this document:
 
 - open source tools
 - suitable for nodeJS application development
 - minimal developer downtime and configuration setback
 - fast build times (RAD)
-
-<!-- more -->
 
 ## The list covers services that can be broken down into "type" categories:
 
