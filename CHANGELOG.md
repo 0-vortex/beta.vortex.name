@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.6.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.5.0...v1.6.0) (2025-03-02)
+
+### 🍕 Features
+
+* improve markdown plugins and add icons ([dd6ec51](https://github.com/0-vortex/beta.vortex.name/commit/dd6ec51031070544c2811beff7e1f7d10f0baa01))
+
 ## [1.5.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.4.0...v1.5.0) (2025-03-02)
 
 ### 🍕 Features
