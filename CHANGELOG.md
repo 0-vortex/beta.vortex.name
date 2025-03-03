@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.8.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.7.0...v1.8.0) (2025-03-03)
+
+### 🍕 Features
+
+* minimal page and post improvements, added prose classes ([63ead48](https://github.com/0-vortex/beta.vortex.name/commit/63ead48efacddc81e6c996aa474b48750bd22540))
+
 ## [1.7.0](https://github.com/0-vortex/beta.vortex.name/compare/v1.6.0...v1.7.0) (2025-03-02)
 
 ### 🍕 Features
