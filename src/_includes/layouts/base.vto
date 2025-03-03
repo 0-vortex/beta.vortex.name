@@ -48,9 +48,9 @@
             <strong class="font-bold self-center opacity-75 hover:opacity-[99]">{{ metas.site }}</strong>
         </a>
 
-        <div class="flex lead-xxsmall 2xl:lead-xxsmall items-center leading-5 gap-8 xl:gap-8 h-full px-2">
+        <div class="flex lead-xxsmall 2xl:lead-xxsmall items-center leading-5 gap-8 xl:gap-8 h-full px-2  w-fit">
             {{- for entry of search.pages("menu.visible=true", "menu.order") }}
-            <a href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }} class="uppercase px-0.5 -mx-0.5 pb-1 -mb-1">
+            <a href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }} class="uppercase px-0.5 -mx-0.5 pb-1 -mb-1 decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline">
                 <span class="whitespace-nowrap">{{ entry.menu.title || entry.title }}</span>
             </a>
             {{ /for }}
@@ -133,7 +133,7 @@
                     <div class="font-bold opacity-75">Projects</div>
                     {{- for entry of it.projects }}
                     <div class="lead-xxsmall my-10">
-                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }}>
+                        <a class="w-fit decoration-2 underline-offset-4 opacity-75 hover:opacity-[99] hover:underline flex items-center gap-1" href="{{ entry.url }}" {{ if entry.url== url }} aria-current="page" {{ /if }} target="_blank">
                             <span class="whitespace-nowrap">{{ entry.name }}</span>
                             <img class="dark:invert" width="16" height="16" src="{{ "square-arrow-out-up-right" |> icon("lucide") }}" alt=""/>
                         </a>

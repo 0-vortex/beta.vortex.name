@@ -3,13 +3,11 @@ layout: layouts/base.vto
 bodyClass: body-tag
 ---
 <header class="mb-8">
-  <img class="block w-full h-auto max-w-full max-h-[300px] object-cover object-top mb-0 border border-solid border-primaryDark" src="/uploads/splash-ethereal-spaces.png" alt=""/>
-
   <h1 class="my-4 text-balance tracking-tight text-current text-6xl font-semibold font-sans">{{ title }}</h1>
 
-  <p>
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="3" cy="13" r="2" fill="currentColor"/><path d="M14 13C14 6.925 9.075 2 3 2M9 13a6 6 0 0 0-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> RSS:
-    <a href="/feed.rss">Atom</a>, <a href="/feed.json">JSON</a>
+  <p class="text-2xl mb-6">
+      <img class="inline dark:invert align-top mt-1" width="24" height="24"  src="{{ "rss" |> icon("lucide") }}" alt=""/>
+      RSS: <a href="/feed.rss">Atom</a>, <a href="/feed.json">JSON</a>
   </p>
 
   {{ if pagination.page === 1 }}
@@ -23,11 +21,11 @@ bodyClass: body-tag
 <nav class="mb-4">
   <h2 class="tracking-tight font-semibold my-2">{{ i18n.search.tags }}:</h2>
 
-  <ul class="list-none m-0 p-0 flex flex-wrap gap-1">
+  <div class="mb-4 gap-2">
   {{ for page of pageTags }}
-    <li><a href="{{ page.url }}" class="border border-neutral-500 rounded-sm px-2 py-1 hover:text-white hover:bg-neutral-800">{{ page.tag }}</a></li>
+    <a href="{{ page.url }}" class="inline-block mr-1 border border-black dark:border-white rounded px-2 py-1 text-sm w-fit font-mono uppercase">{{ page.tag }}</a>
   {{ /for }}
-  </ul>
+  </div>
 </nav>
 {{ /if }}
 {{ /if }}

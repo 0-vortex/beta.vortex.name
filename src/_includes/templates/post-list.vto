@@ -1,18 +1,19 @@
-<ul class="list-none p-0">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8 mb-12 mt-10 pb-12 border-dashed border-b border-inset dark:border-insetDark">
   {{ for post of postslist }}
-  <li class="mt-4">
-    <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
-      <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
-        {{ post.title || post.url }}
-      </a>
-    </h2>
+    {{ include "templates/post-item.vto" { post } }}
+      <div class="mt-4 hidden">
+        <h2 class="mb-4 text-balance tracking-tight text-current text-4xl font-sans">
+          <a href="{{ post.url }}" {{ if post.url == url }} aria-current="page"{{ /if }}>
+            {{ post.title || post.url }}
+          </a>
+        </h2>
 
-    {{ include "templates/post-details.vto" {
-      date: post.date,
-      tags: post.tags,
-      author: post.author,
-      readingInfo: post.readingInfo
-    } }}
-  </li>
+        {{ include "templates/post-details.vto" {
+          date: post.date,
+          tags: post.tags,
+          author: post.author,
+          readingInfo: post.readingInfo
+        } }}
+      </div>
   {{ /for }}
-</ul>
+</div>

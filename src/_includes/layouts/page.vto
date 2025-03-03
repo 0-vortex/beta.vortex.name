@@ -3,13 +3,13 @@ layout: layouts/base.vto
 bodyClass: body-tag
 ---
 <article class="post" data-pagefind-body>
-  <header class="post-header">
-    <h1 class="mb-4 text-balance tracking-tight text-current text-6xl font-sans font-bold">{{ it.title }}</h1>
+  <header class="mb-8">
+    <h1 class="text-balance tracking-tight text-current text-6xl font-sans font-bold">{{ it.title }}</h1>
 
     {{ it.subtitle |> md }}
   </header>
 
-  <div class="post-body">
+  <div class="prose dark:prose-invert prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
     {{ content |> md }}
   </div>
 </article>
